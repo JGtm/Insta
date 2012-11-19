@@ -1,0 +1,93 @@
+body {
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:13px; 
+    line-height:21px; 
+    color:#7e7e7e; 
+    margin : 0px;
+}
+
+.header {
+    background: url("../images/header_tail.png") repeat-x scroll 50% 0 transparent;
+    height: 100%;
+}
+.header-top {
+    width : 940px;
+    padding-top : 47px;
+    margin : auto;
+}
+.header-logo {
+    background: url("../images/logo/logo.png") no-repeat scroll left top transparent;
+    width:364px;
+    height:128px;
+    float : left;
+}
+.header-contact{
+    padding-top: 70px;
+    text-align: right;
+}
+.header-contact span {
+    color: #302822;
+    font: bold 12px/18px Arial,Helvetica,sans-serif;
+    letter-spacing: normal;
+}
+.header-contact .phone {
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+}
+.nav {
+    border: 1px solid #9A4F07;
+    margin: 0 0 26px;
+    padding: 10px 0 9px;
+    position: relative;
+    z-index: 10;
+    background: url("../images/header.jpg") repeat scroll 0 0 transparent;
+}
+
+.main_container {
+    background:#fefefe;
+}
+#rt-copyright {
+    background:#ffffff;
+}
+#rt-copyright .rt-container {
+    background:#ffffff;
+}
+body a {
+    color:#ef1d26;
+}
+body a:hover {
+    color:#000000;
+}
+a.moduleItemReadMore, a.k2ReadMore, a.moduleCustomLink,.commentLink a,div.itemComments .commentToolbar a,.toggle-editor a {
+    color:#ffffff; 
+}
+a.moduleItemReadMore:hover, a.k2ReadMore:hover, a.moduleCustomLink:hover,.commentLink a:hover,div.itemComments .commentToolbar a:hover,.toggle-editor a:hover {
+    color:#ffffff;
+}
+div.itemCommentsForm form input#submitCommentButton, input[type="submit"], button.button {
+    color:#ffffff; background
+}
+div.itemCommentsForm form input#submitCommentButton:hover, input[type="submit"]:hover, button.button:hover {
+    color:#ffffff;
+}
+.sf-menu > li > a,.sf-menu > li > span{
+    color:#ffcb62; 
+}
+.sf-menu > li > a:hover, .sf-menu > li > a:active, .sf-menu > li.sfHover > a, .sf-menu > li.sfHover > span, .sf-menu > li:hover > span, .sf-menu > li.current > a, .sf-menu > li.current > span, .sf-menu > li.active > a, .sf-menu > li.active > span {
+    color:#ffffff;
+}
+.sf-menu ul{
+    background:#38220c;
+}
+.sf-menu ul > li {
+    background:transparent;
+}
+.sf-menu ul > li > a, .sf-menu ul > li > span {
+    color:#f2c05c;
+} 
+.sf-menu ul > li > a:hover, .sf-menu ul > li:hover > a, .sf-menu ul > li:hover > span, .sf-menu ul > li > a:active, .sf-menu ul > li.current > a, .sf-menu ul > li.current > span, .sf-menu ul > li.sfHover > a, .sf-menu ul > li.sfHover > span, .sf-menu ul > li.active > span, .sf-menu ul > li.active > a {
+    color:#ffffff;
+}
