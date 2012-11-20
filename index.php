@@ -26,7 +26,11 @@
 		    </div>
 		    <div class="search"></div>
 		</div>
+		<div class="clear"></div>
 	    </div>
+	</div>
+	<div class="contenu">
+	    kdzycekazuycezkuevceuzveucvu
 	</div>
     </body>
 </html>

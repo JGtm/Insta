@@ -4,11 +4,12 @@ body {
     line-height:21px; 
     color:#7e7e7e; 
     margin : 0px;
+    background: url("../images/texture.jpg") repeat scroll 50% 0 #FFFFFF;
 }
 
 .header {
     background: url("../images/header_tail.png") repeat-x scroll 50% 0 transparent;
-    height: 100%;
+    height: 242px;
 }
 .header-top {
     width : 940px;
@@ -55,11 +56,9 @@ body {
     padding: 5px 0 0;
     text-transform: uppercase;
 }
-
 .bouton ul {
     list-style: none outside none;
 }
-
 .bouton ul li:before {
     background: url("../images/menu_border.png") repeat-y scroll 0 0 transparent;
     content: " ";
@@ -94,15 +93,11 @@ body {
 .search{
 
 }
-
-.main_container {
-    background:#fefefe;
-}
-#rt-copyright {
-    background:#ffffff;
-}
-#rt-copyright .rt-container {
-    background:#ffffff;
+.contenu {
+    width: 938px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 10px;
 }
 body a {
     color:#ef1d26;
