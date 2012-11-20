@@ -58,6 +58,9 @@ body {
 }
 .bouton ul {
     list-style: none outside none;
+    padding-bottom: 15px; 
+    margin-top: 0px; 
+    padding-left: 30px;
 }
 .bouton ul li:before {
     background: url("../images/menu_border.png") repeat-y scroll 0 0 transparent;
@@ -82,8 +85,8 @@ body {
     display: none;
 }
 .bouton ul > li  > a {
-    font-family: 'Oswald',sans-serif;
-    font-size: 16px;
+    font-family: 'Helvetica neue',sans-serif;
+    font-size: 14px;
     letter-spacing: -1px;
     line-height: 22px;
     padding: 0;
@@ -224,6 +227,8 @@ a#totop:hover {
 }
 .footer-nav {
     text-decoration: none;
+    padding-top: 23px; 
+    padding-left: 500px
 }
 .footer-nav a {
     color : #FFCB62;
@@ -238,33 +243,6 @@ a#totop:hover {
     margin: 0 5px 0 4px;
     text-transform: uppercase;
 }
-a.moduleItemReadMore, a.k2ReadMore, a.moduleCustomLink,.commentLink a,div.itemComments .commentToolbar a,.toggle-editor a {
-    color:#ffffff; 
-}
-a.moduleItemReadMore:hover, a.k2ReadMore:hover, a.moduleCustomLink:hover,.commentLink a:hover,div.itemComments .commentToolbar a:hover,.toggle-editor a:hover {
-    color:#ffffff;
-}
-div.itemCommentsForm form input#submitCommentButton, input[type="submit"], button.button {
-    color:#ffffff; background
-}
 div.itemCommentsForm form input#submitCommentButton:hover, input[type="submit"]:hover, button.button:hover {
-    color:#ffffff;
-}
-.sf-menu > li > a,.sf-menu > li > span{
-    color:#ffcb62; 
-}
-.sf-menu > li > a:hover, .sf-menu > li > a:active, .sf-menu > li.sfHover > a, .sf-menu > li.sfHover > span, .sf-menu > li:hover > span, .sf-menu > li.current > a, .sf-menu > li.current > span, .sf-menu > li.active > a, .sf-menu > li.active > span {
-    color:#ffffff;
-}
-.sf-menu ul{
-    background:#38220c;
-}
-.sf-menu ul > li {
-    background:transparent;
-}
-.sf-menu ul > li > a, .sf-menu ul > li > span {
-    color:#f2c05c;
-} 
-.sf-menu ul > li > a:hover, .sf-menu ul > li:hover > a, .sf-menu ul > li:hover > span, .sf-menu ul > li > a:active, .sf-menu ul > li.current > a, .sf-menu ul > li.current > span, .sf-menu ul > li.sfHover > a, .sf-menu ul > li.sfHover > span, .sf-menu ul > li.active > span, .sf-menu ul > li.active > a {
     color:#ffffff;
 }
