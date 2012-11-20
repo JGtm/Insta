@@ -12,7 +12,20 @@
 		    <span>Any Question ?</span>
 		    <span class="phone"> Call Us: +1 800 559 6580</span>
 		</div>
-		<div class="nav"></div>
+		<div class="clear "></div>
+		<div class="nav">
+		    <div class="bouton">
+			<ul>
+			    <li>home</li>
+			    <li>about</li>
+			    <li>services</li>
+			    <li>menu</li>
+			    <li>blog</li>
+			    <li>contact</li>
+			</ul>
+		    </div>
+		    <div class="search"></div>
+		</div>
 	    </div>
 	</div>
     </body>

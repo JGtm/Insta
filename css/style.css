@@ -44,6 +44,50 @@ body {
     position: relative;
     z-index: 10;
     background: url("../images/header.jpg") repeat scroll 0 0 transparent;
+    height : 31px;
+}
+.clear {
+    clear: both;
+}
+.bouton {
+    float : left;
+    margin: 0 7px;
+    padding: 5px 0 0;
+    text-transform: uppercase;
+}
+
+.bouton ul {
+    list-style: none outside none;
+}
+
+.bouton ul li:before {
+    background: url("../images/menu_border.png") repeat-y scroll 0 0 transparent;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: -24px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    margin: 0 24px;
+}
+.bouton ul li {
+    float: left;
+    position: relative;
+}
+.bouton ul > li:first-child:before {
+    display: none;
+}
+.bouton il li a {
+    font-family: 'Oswald',sans-serif;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 22px;
+    padding: 0;
+    transition: all 0.5s ease 0s;
+}
+.search{
+
 }
 
 .main_container {
