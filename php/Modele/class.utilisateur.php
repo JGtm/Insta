@@ -1,15 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-
-/**
- * Pizzeria - Modele/Modele/class.utilisateur.php
- */
-if (0 > version_compare(PHP_VERSION, '5'))
-{
-    die('This file was generated for PHP 5');
-}
-
 abstract class Modele_utilisateur
 {
 
