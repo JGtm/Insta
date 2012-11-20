@@ -37,10 +37,18 @@
 		Try our famous fresh made Italian pizzas with only the freshest ingredients.
 	    </div>
 	    <div class="contenu">
+		<h3 class="title">The Best From  Our Chef</h3>
+		<img src="images/pizza.jpg" />
 		<p>At vero eos et accusamus et iusto odio dignis- simos ducimus  qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et  quasmo- lestias excepturi sint occaecati cupiditate non provident,  similique sunt in culpa qui...</p>
 		<p>At vero eos et accusamus et iusto odio dignis- simos ducimus  qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et  quasmo- lestias excepturi sint occaecati cupiditate non provident,  similique sunt in culpa qui...</p>
 		<p>At vero eos et accusamus et iusto odio dignis- simos ducimus  qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et  quasmo- lestias excepturi sint occaecati cupiditate non provident,  similique sunt in culpa qui...</p>
-		<a href="" class="more">More</a>
+		<div class="clear"></div>
+		<div class="right" align="right"><a href="" class="more">More</a></div>
+	    </div>
+	</div>
+	<div class="footer">
+	    <div class="blocktotop">
+		<a id="totop" href="#" style="outline: medium none;">Scroll to Top</a>
 	    </div>
 	</div>
     </body>

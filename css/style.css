@@ -89,6 +89,7 @@ body {
     padding: 0;
     transition: all 0.5s ease 0s;
     color: #FFCB62;
+    text-decoration: none;
 }
 .search{
 
@@ -102,6 +103,16 @@ body {
     background-color: #ffffff;
     margin-top: 10px;
     padding: 10px;
+}
+.contenu img {
+    float :right;
+    max-width: 350px;
+}
+h3.title {
+    display: block;
+    font: 30px/36px 'Helvetica neue',sans-serif;
+    letter-spacing: -1px;
+    color: #257E31;
 }
 body a {
     color:#ef1d26;
@@ -139,6 +150,10 @@ h2.title {
     text-decoration: none;
     text-shadow: 1px 1px rgba(171, 104, 37, 0.58);
     color: #ffffff;
+    text-align: right;
+}
+.right {
+    margin-right : 10px;
 }
 .more:hover {
      background: url("../images/button_tail.png") repeat-x scroll 0 -36px transparent;
@@ -152,6 +167,37 @@ h2.title {
     text-decoration: none;
     text-shadow: 1px 1px rgba(171, 104, 37, 0.58);
     color: #ffffff;
+}
+.blocktotop {
+    bottom: 13px;
+    position: fixed;
+    right: 13px;
+}
+a#totop {
+    background: url("../images/scroll-to-top.png") no-repeat scroll 8px 12px #FFCB62;
+    border-radius: 21px 21px 21px 21px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12) inset, 1px 1px 0 rgba(255, 255, 255, 0.75);
+    display: block;
+    font-size: 1px;
+    height: 42px;
+    line-height: 1px;
+    text-indent: -9999em;
+    transition: all 0.5s ease 0s;
+    width: 42px;
+    z-index: 999;
+}
+a#totop:hover {
+    background: url("../images/scroll-to-top.png") no-repeat scroll 8px 12px #EEEEEE;
+    border-radius: 21px 21px 21px 21px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12) inset, 1px 1px 0 rgba(255, 255, 255, 0.75);
+    display: block;
+    font-size: 1px;
+    height: 42px;
+    line-height: 1px;
+    text-indent: -9999em;
+    transition: all 0.5s ease 0s;
+    width: 42px;
+    z-index: 999;
 }
 a.moduleItemReadMore, a.k2ReadMore, a.moduleCustomLink,.commentLink a,div.itemComments .commentToolbar a,.toggle-editor a {
     color:#ffffff; 
