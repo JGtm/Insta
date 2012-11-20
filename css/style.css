@@ -4,11 +4,12 @@ body {
     line-height:21px; 
     color:#7e7e7e; 
     margin : 0px;
+    background: url("../images/texture.jpg") repeat scroll 50% 0 #FFFFFF;
 }
 
 .header {
     background: url("../images/header_tail.png") repeat-x scroll 50% 0 transparent;
-    height: 100%;
+    height: 242px;
 }
 .header-top {
     width : 940px;
@@ -55,11 +56,9 @@ body {
     padding: 5px 0 0;
     text-transform: uppercase;
 }
-
 .bouton ul {
     list-style: none outside none;
 }
-
 .bouton ul li:before {
     background: url("../images/menu_border.png") repeat-y scroll 0 0 transparent;
     content: " ";
@@ -94,21 +93,65 @@ body {
 .search{
 
 }
-
-.main_container {
-    background:#fefefe;
+.corps {
+    width: 938px;
+    margin: auto;
+    margin-top: 10px;
 }
-#rt-copyright {
-    background:#ffffff;
-}
-#rt-copyright .rt-container {
-    background:#ffffff;
+.contenu {
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 10px;
 }
 body a {
     color:#ef1d26;
 }
 body a:hover {
     color:#000000;
+}
+h2.title {
+    color: #3E2A15;
+    font-size: 60px;
+    font-family: helvetica neue,sans-serif;
+    letter-spacing: normal;
+    line-height: 72px;
+    margin: 0 0 7px;
+    text-transform: uppercase;
+    padding: 5px;
+}
+.welcome {
+    color: #7B6853;
+    font-family: helvetica neue,sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.more {
+    background: url("../images/button_tail.png") repeat-x scroll 0 0 transparent;
+    border: medium none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
+    display: inline-block;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 23px;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(171, 104, 37, 0.58);
+    color: #ffffff;
+}
+.more:hover {
+     background: url("../images/button_tail.png") repeat-x scroll 0 -36px transparent;
+    border: medium none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
+    display: inline-block;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 23px;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(171, 104, 37, 0.58);
+    color: #ffffff;
 }
 a.moduleItemReadMore, a.k2ReadMore, a.moduleCustomLink,.commentLink a,div.itemComments .commentToolbar a,.toggle-editor a {
     color:#ffffff; 

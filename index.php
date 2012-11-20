@@ -20,12 +20,27 @@
 			    <li><a>about</a></li>
 			    <li><a>services</a></li>
 			    <li><a>menu</a></li>
-			    <li><a>blog</a></li>
+			    <li><a href="Vue/authentification.php">s'identifier</a></li>
 			    <li><a>contact</a></li>
 			</ul>
 		    </div>
 		    <div class="search"></div>
 		</div>
+		<div class="clear"></div>
+	    </div>
+	</div>
+	<div class="corps">
+	    <h2 class="title">hello guest!</h2>
+	    <div class="welcome">
+		Welcome to our pizza parlour with its friendly hospitality!
+		<br>
+		Try our famous fresh made Italian pizzas with only the freshest ingredients.
+	    </div>
+	    <div class="contenu">
+		<p>At vero eos et accusamus et iusto odio dignis- simos ducimus  qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et  quasmo- lestias excepturi sint occaecati cupiditate non provident,  similique sunt in culpa qui...</p>
+		<p>At vero eos et accusamus et iusto odio dignis- simos ducimus  qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et  quasmo- lestias excepturi sint occaecati cupiditate non provident,  similique sunt in culpa qui...</p>
+		<p>At vero eos et accusamus et iusto odio dignis- simos ducimus  qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et  quasmo- lestias excepturi sint occaecati cupiditate non provident,  similique sunt in culpa qui...</p>
+		<a href="" class="more">More</a>
 	    </div>
 	</div>
     </body>
