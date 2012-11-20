@@ -11,9 +11,9 @@ class Modele_ingredient
     // --- ATTRIBUTES ---
 
 
-    public $nom = null;
-    public $quantit� = null;
-    public $actif = null;
+    public $nom = '';
+    public $quantite = 0;
+    public $actif = true;
 
     // --- OPERATIONS ---
 }

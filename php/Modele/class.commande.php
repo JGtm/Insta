@@ -15,8 +15,8 @@ class Modele_commande
 
     public $numero = null;
     public $client = null;
-    public $etat = null;
-    public $prixTotal = null;
+    public $etat = '';
+    public $prixTotal = 0;
     public $date = null;
 
     // --- OPERATIONS ---

@@ -33,7 +33,7 @@ class Modele_client extends Modele_utilisateur
 
         function __construct($nom, $prenom, $email, $mdp)
         {
-            Modele_utilisateur::__construct($nom, $prenom, $email, $mdp, 'FO');
+            parent::__construct($nom, $prenom, $email, $mdp, 'FO');
         }
 
         $this->adresse = $adresse;

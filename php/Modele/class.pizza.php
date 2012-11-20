@@ -12,8 +12,8 @@ class Modele_pizza extends Modele_produit
     // --- ATTRIBUTES ---
 
 
-    public $base = null;
-    public $taille = null;
+    public $base = '';
+    public $taille = '';
 
     // --- OPERATIONS ---
 }

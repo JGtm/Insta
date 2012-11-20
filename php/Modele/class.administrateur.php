@@ -10,7 +10,7 @@ class Modele_administrateur extends Modele_utilisateur
     // --- OPERATIONS ---
     function __construct($nom, $prenom, $email, $mdp)
     {
-        Modele_utilisateur::__construct($nom, $prenom, $email, $mdp, 'SBO');
+        parent::__construct($nom, $prenom, $email, $mdp, 'SBO');
     }
 
     public function crudEmploye()
