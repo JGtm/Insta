@@ -1,3 +1,11 @@
+<?php
+require_once 'php/Controleur/class.controleurMain.php';
+
+$controleurSpe = new Controleur_Main($_GET['page']);
+
+
+?>
+
 <html>
     <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -20,7 +28,7 @@
 			    <li><a>about</a></li>
 			    <li><a>services</a></li>
 			    <li><a>menu</a></li>
-			    <li><a href="Vue/authentification.php">s'identifier</a></li>
+			    <li><a href="?page=authentification">s'identifier</a></li>
 			    <li><a>contact</a></li>
 			</ul>
 		    </div>
