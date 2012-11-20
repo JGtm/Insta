@@ -16,7 +16,7 @@ class Modele_bdd
     private $port = '3306';           //port de connexion
     private $ut = 'root';            //utilisateur  
     private $mdp = '';                //mot de passe
-    private $bd = 'Librairie';       //nom base de donnee
+    private $bd = 'Pizzeria';       //nom base de donnee
 
     /////////////////////////////////////////////
     //Constructeur///////////////////////////////
