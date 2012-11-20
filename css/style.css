@@ -199,6 +199,45 @@ a#totop:hover {
     width: 42px;
     z-index: 999;
 }
+.footer {
+    background: url("../images/footer.jpg") repeat scroll 50% 0 transparent;
+    padding: 80px 0;
+}
+.footer-top {
+    width : 938px;
+    margin : auto;
+}
+.footer-info {
+    float : left;
+}
+.footer-info a {
+    color : #FFFFFF;
+}
+.siteName {
+    background: url("../images/footer_logo.png") repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 43px;
+    overflow: hidden;
+    text-indent: -200px;
+    vertical-align: bottom;
+    width: 205px;
+}
+.footer-nav {
+    text-decoration: none;
+}
+.footer-nav a {
+    color : #FFCB62;
+}
+.footer-nav a:active, .footer-nav a:hover {
+    color : #FFFFFF;
+}
+.footer-nav li {
+    float: left;
+    font-size: 11px;
+    list-style: none outside none;
+    margin: 0 5px 0 4px;
+    text-transform: uppercase;
+}
 a.moduleItemReadMore, a.k2ReadMore, a.moduleCustomLink,.commentLink a,div.itemComments .commentToolbar a,.toggle-editor a {
     color:#ffffff; 
 }

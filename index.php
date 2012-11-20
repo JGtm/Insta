@@ -46,9 +46,29 @@
 		<div class="right" align="right"><a href="" class="more">More</a></div>
 	    </div>
 	</div>
+	<div class="blocktotop">
+	    <a id="totop" href="#" style="outline: medium none;">Scroll to Top</a>
+	</div>
 	<div class="footer">
-	    <div class="blocktotop">
-		<a id="totop" href="#" style="outline: medium none;">Scroll to Top</a>
+	    <div class="footer-top">
+		<div class="footer-info">
+		    <p>
+			<span class="siteName">Happy Family </span>
+			© 2012 |
+			<a href="http://livedemo00.template-help.com/joomla_41255/index.php/privacy-policy">Privacy Policy</a>
+		    </p>
+		</div>
+		<div class="footer-nav">
+		    <ul>
+			<li><a href="/Insta/index.php">home</a></li>
+			<li><a>about</a></li>
+			<li><a>services</a></li>
+			<li><a>menu</a></li>
+			<li><a href="Vue/authentification.php">s'identifier</a></li>
+			<li><a>contact</a></li>
+		    </ul>
+		</div>
+		<div class="clear"></div>
 	    </div>
 	</div>
     </body>
