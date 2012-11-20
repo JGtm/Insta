@@ -93,17 +93,65 @@ body {
 .search{
 
 }
-.contenu {
+.corps {
     width: 938px;
-    background-color: #ffffff;
     margin: auto;
     margin-top: 10px;
+}
+.contenu {
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 10px;
 }
 body a {
     color:#ef1d26;
 }
 body a:hover {
     color:#000000;
+}
+h2.title {
+    color: #3E2A15;
+    font-size: 60px;
+    font-family: helvetica neue,sans-serif;
+    letter-spacing: normal;
+    line-height: 72px;
+    margin: 0 0 7px;
+    text-transform: uppercase;
+    padding: 5px;
+}
+.welcome {
+    color: #7B6853;
+    font-family: helvetica neue,sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.more {
+    background: url("../images/button_tail.png") repeat-x scroll 0 0 transparent;
+    border: medium none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
+    display: inline-block;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 23px;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(171, 104, 37, 0.58);
+    color: #ffffff;
+}
+.more:hover {
+     background: url("../images/button_tail.png") repeat-x scroll 0 -36px transparent;
+    border: medium none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
+    display: inline-block;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 23px;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(171, 104, 37, 0.58);
+    color: #ffffff;
 }
 a.moduleItemReadMore, a.k2ReadMore, a.moduleCustomLink,.commentLink a,div.itemComments .commentToolbar a,.toggle-editor a {
     color:#ffffff; 
