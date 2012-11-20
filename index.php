@@ -16,12 +16,12 @@
 		<div class="nav">
 		    <div class="bouton">
 			<ul>
-			    <li>home</li>
-			    <li>about</li>
-			    <li>services</li>
-			    <li>menu</li>
-			    <li>blog</li>
-			    <li>contact</li>
+			    <li><a href="/Insta/index.php">home</a></li>
+			    <li><a>about</a></li>
+			    <li><a>services</a></li>
+			    <li><a>menu</a></li>
+			    <li><a>blog</a></li>
+			    <li><a>contact</a></li>
 			</ul>
 		    </div>
 		    <div class="search"></div>
