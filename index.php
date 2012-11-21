@@ -1,4 +1,16 @@
 <?php
+session_start(); // initialisation des variables de session, il ne doit pas y avoir d'affichage avant cette ligne!!
+
+if (isset($_POST['email']) AND $_POST['email'] != '' AND isset($_POST['mdp']) AND $_POST['mdp'] != '') // si les emails et mdp envoyés en POST existent et ne sont pas vides
+{
+    $_SESSION['email'] = $_POST['email']; // on stocke ces valeurs dans la variable SESSION correspondante
+    $_SESSION['mdp'] = $_POST['mdp'];
+    //$_SESSION['qualite']=$qualite;
+}
+?>
+
+
+<?php
 require_once 'php/Controleur/class.controleurMain.php';
 
 $controleurSpe = new Controleur_Main($_GET['page']);
