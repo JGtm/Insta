@@ -127,24 +127,17 @@ class CHtml
 	$header .= '<span class="phone">Appelez nous : 06 52 80 81 77</span>';
 	$header .= '</div>';
 	$header .= '<div class="clear "></div>';
-	$header .= $this->header_nav($nav);
+	$header .= '<div class="nav">';
+	$header .= '<div class="bouton">';
+	$header .= $this->nav($nav);
+	$header .= '</div>';
+	$header .= '<div class = "search"></div>';
+	$header .= '</div>';
 	$header .= '<div class = "clear"></div>';
 	$header .= '</div>';
 	$header .= '</div>';
 
 	return $header;
-    }
-
-    private function header_nav($nav)
-    {
-	$header_nav = '<div class="nav">';
-	$header_nav .= '<div class="bouton">';
-	$header_nav .= $this->nav($nav);
-	$header_nav .= '</div>';
-	$header_nav .= '<div class = "search"></div>';
-	$header_nav .= '</div>';
-
-	return $header_nav;
     }
 
     private function nav($liens)
@@ -217,21 +210,14 @@ class CHtml
 	$footer .= '<a href="?privacy-policy">Politique de confidentialité</a>';
 	$footer .= '</p>';
 	$footer .= '</div>';
-	$footer .= $this->footer_nav($nav);
+	$footer .= '<div class="footer-nav">';
+	$footer .= $this->nav($nav);
+	$footer .= '</div>';
 	$footer .= '<div class="clear"></div>';
 	$footer .= '</div>';
 	$footer .= '</div>';
 
 	return $footer;
-    }
-
-    private function footer_nav($nav)
-    {
-	$footer_nav = '<div class="footer-nav">';
-	$footer_nav .= $this->nav($nav);
-	$footer_nav .= '</div>';
-
-	return $footer_nav;
     }
 
 }
