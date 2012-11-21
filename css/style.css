@@ -94,6 +94,26 @@ body {
     color: #FFCB62;
     text-decoration: none;
 }
+.bouton ul > li  > a:active {
+    font-family: 'Helvetica neue',sans-serif;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 22px;
+    padding: 0;
+    transition: all 0.5s ease 0s;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.bouton ul > li  > a:hover {
+    font-family: 'Helvetica neue',sans-serif;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 22px;
+    padding: 0;
+    transition: all 0.5s ease 0s;
+    color: #FFFFFF;
+    text-decoration: none;
+}
 .search{
 
 }
