@@ -2,7 +2,6 @@
 require_once 'class.controleurAuth.php';
 require_once 'php/Modele/class.bdd.php' ;
 
-
 class Controleur_Main
 {
  
