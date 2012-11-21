@@ -1,6 +1,6 @@
 <?php
 require_once 'class.controleurAuth.php';
-require_once 'class.dbb.php';
+require_once '../Modele/class.bdd.php';
 
 class Controleur_Main
 {
@@ -19,7 +19,13 @@ class Controleur_Main
                 echo $this->controleurSpe->genererFormulaireAuth();
                 
                 $acn=$bdd->seConnecter();
-                $bdd->selectionner($acn, 'utilisateur', 'mdp', $_SESSION['mdp']);
+                $leMotdePasse=$bdd->selectionner($acn, 'utilisateur', 'mdp', $_SESSION['mdp']);
+                if ($leMotdePasse!=null)
+                {
+                    echo $leMotdePasse;
+                    $this->controleurSpe->validFormulaireAuth($leMotdePasse);
+                }
+                
                 
         }
     }
