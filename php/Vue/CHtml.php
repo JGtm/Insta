@@ -71,7 +71,7 @@ class CHtml
 	return $nav;
     }
 
-    public function corps($titreContenu, $contenu, $lienImage, $titreH2 = '', $welcome = '')
+    public function corps($titreContenu, $contenu, $lienImage = '', $titreH2 = '', $welcome = '')
     {
 	$corps = '<div class="corps">';
 

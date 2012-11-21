@@ -18,11 +18,11 @@ require_once 'php/Controleur/CControleurMain.php';
 
 $controleurSpe = new CControleurMain($_GET['page']);
 
-$nomDeLaPage = 'Home';
-$titreH2 = 'hello guest!';
-$welcome = 'Welcome to our pizza parlour with its friendly hospitality! Try our famous fresh made Italian pizzas with only the freshest ingredients.';
+$nomDeLaPage = 'Home'; // Titre de la page visible dans l'onglet
+$titreH2 = 'hello guest!';  // Facultatif
+$welcome = 'Welcome to our pizza parlour with its friendly hospitality! Try our famous fresh made Italian pizzas with only the freshest ingredients.'; // Facultatif
 $titreContenu = 'The Best From Our Chef';
-$lienImage = 'images/pizza.jpg';
+$lienImage = 'images/pizza.jpg'; // Facultatif
 $tabLiens =     $liens = array ('home' => '/Insta/index.php',
 	    'about' => ' ',
 	    'services' => ' ',
