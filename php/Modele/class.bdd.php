@@ -35,7 +35,7 @@ class Modele_bdd
             $classe = __CLASS__;
             self::$instance = new $classe();
             self::seConnecter();
-            echo "<br />La classe est instanciee";
+            //echo "<br />La classe est instanciee";
         }
         else
             echo "<br />La classe est deja instanciee";
@@ -53,7 +53,7 @@ class Modele_bdd
         try
         {
             //----on se connecte en utilisant les parametres
-            $lcn = new PDO($this->pilote . ":host=" . $this->serveur . ";dbname=" . $this->bd . ";port=" . $this->port, $this->ut, $this->mdp);
+            $lcn = new PDO(self::$instance->getPilote() . ":host=" . self::$instance->getServeur() . ";dbname=" . self::$instance->getBd() . ";port=" . self::$instance->getPort(), self::$instance->getUt(), self::$instance->getMdp());
             //---on modifie un des attribut par default pour gerer les erreur sur tt le script pas seulement sur la connection
             $lcn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $lcn->exec("SET NAMES 'UTF8'");

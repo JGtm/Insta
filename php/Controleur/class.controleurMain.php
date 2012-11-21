@@ -1,6 +1,7 @@
 <?php
 require_once 'class.controleurAuth.php';
-require_once '../Modele/class.bdd.php';
+require_once 'php/Modele/class.bdd.php' ;
+
 
 class Controleur_Main
 {
@@ -10,7 +11,7 @@ class Controleur_Main
   
     function __construct($page)
     {
-        $bdd=new Modele_bdd();
+        $bdd=  Modele_bdd::getInstance();
         
         switch ($page)
         {
@@ -19,6 +20,7 @@ class Controleur_Main
                 echo $this->controleurSpe->genererFormulaireAuth();
                 
                 $acn=$bdd->seConnecter();
+                
                 $leMotdePasse=$bdd->selectionner($acn, 'utilisateur', 'mdp', $_SESSION['mdp']);
                 if ($leMotdePasse!=null)
                 {
