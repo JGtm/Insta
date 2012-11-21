@@ -1,6 +1,6 @@
 <?php
 
-abstract class Modele_utilisateur
+abstract class CUtilisateur
 {
 
     // --- ASSOCIATIONS ---

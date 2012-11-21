@@ -1,8 +1,8 @@
 <?php
 
-require_once('class.utilisateur.php');
+require_once('CUtilisateur.php');
 
-class Modele_employe extends Modele_utilisateur
+class CEmploye extends CUtilisateur
 {
 
     // --- ASSOCIATIONS ---

@@ -1,11 +1,11 @@
 <?php
 
-require_once('class.client.php');
+require_once('CClient.php');
 
 
-require_once('class.compose.php');
+require_once('CCompose.php');
 
-class Modele_commande
+class CCommande
 {
 
     // --- ASSOCIATIONS ---

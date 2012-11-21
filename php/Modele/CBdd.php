@@ -4,7 +4,7 @@
   SINGLETON
  */
 
-class Modele_bdd
+class CBdd
 {
 
     ////////////////////////////////////////////
@@ -80,6 +80,22 @@ class Modele_bdd
     {
         trigger_error('Le clonage est interdit.', E_USER_ERROR);
     }
+    
+        //---Fonction de generation des where---
+    public function genererWhere($atColonnesValeurs)
+    {
+        $lsWhere = " WHERE ";
+
+        foreach ($atColonnesValeurs as $colonne => $valeur)
+        {
+            $lsWhere .= $colonne . "=? AND ";
+        }
+
+        $lsWhere = substr($lsWhere, 0, -5);
+
+        return $lsWhere;
+    }
+
 
     //---Fonction selection---
     public function selectionner($acn, $asTable, $asColonnes = "*", $atColonnesValeurs = "")
@@ -128,20 +144,6 @@ class Modele_bdd
         return $lsContenu;
     }
 
-    //---Fonction de generation des where---
-    public function genererWhere($atColonnesValeurs)
-    {
-        $lsWhere = " WHERE ";
-
-        foreach ($atColonnesValeurs as $colonne => $valeur)
-        {
-            $lsWhere .= $colonne . "=? AND ";
-        }
-
-        $lsWhere = substr($lsWhere, 0, -5);
-
-        return $lsWhere;
-    }
 
     /////////////////////////////////////////////
     //Accesseurs/////////////////////////////////

@@ -1,9 +1,9 @@
 <?php
 
 
-require_once('class.pizza.php');
+require_once('CPizza.php');
 
-class Modele_ingredient
+class CIngredient
 {
 
     // --- ASSOCIATIONS ---

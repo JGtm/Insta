@@ -1,20 +1,11 @@
 <?php
 
-error_reporting(E_ALL);
+require_once('CCommande.php');
 
 
+require_once('CUtilisateur.php');
 
-if (0 > version_compare(PHP_VERSION, '5'))
-{
-    die('This file was generated for PHP 5');
-}
-
-require_once('class.commande.php');
-
-
-require_once('class.utilisateur.php');
-
-class Modele_client extends Modele_utilisateur
+class CClient extends CUtilisateur
 {
 
     // --- ASSOCIATIONS ---
