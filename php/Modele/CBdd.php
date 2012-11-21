@@ -82,13 +82,13 @@ class CBdd
     }
     
         //---Fonction de generation des where---
-    public function genererWhere($atColonnesValeurs)
+        private function genererWhere($atColonnesValeurs)
     {
         $lsWhere = " WHERE ";
 
         foreach ($atColonnesValeurs as $colonne => $valeur)
         {
-            $lsWhere .= $colonne . "=? AND ";
+            $lsWhere .= $colonne . "='".$valeur."' AND ";
         }
 
         $lsWhere = substr($lsWhere, 0, -5);
@@ -110,12 +110,12 @@ class CBdd
             {
                 $tValeurs[] = $valeur;
             }
-            $lsWhere = genererWhere($atColonnesValeurs);
+            $lsWhere = $this->genererWhere($atColonnesValeurs);
         }
 
         $lsSQL = "SELECT $asColonnes FROM $asTable $lsWhere";
 
-        echo $lsSQL;
+        //echo $lsSQL;
 
         try
         {
@@ -124,7 +124,7 @@ class CBdd
             $lrs->setFetchMode(PDO::FETCH_ASSOC);
 
             foreach ($lrs as $enr)
-            {
+            {              
                 foreach ($enr as $valeur)
                 {
                     $lsContenu .= $valeur . "/";
@@ -141,6 +141,7 @@ class CBdd
             $lsContenu .= "Echec de l'execution : " . $e->getMessage();
         }
 
+//        return $lsContenu;
         return $lsContenu;
     }
 

@@ -6,7 +6,9 @@ if (isset($_POST['email']) AND $_POST['email'] != '' AND isset($_POST['mdp']) AN
 {
     $_SESSION['email'] = $_POST['email']; // on stocke ces valeurs dans la variable SESSION correspondante
     $_SESSION['mdp'] = $_POST['mdp'];
-//$_SESSION['qualite']=$qualite;
+    $_SESSION['qualite']='';
+    
+    
 }
 ?>
 

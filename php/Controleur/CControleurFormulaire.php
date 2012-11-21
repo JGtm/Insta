@@ -9,10 +9,6 @@ class CControleurFormulaire
 /////////////////////////////////////////////
     function __construct()
     {
-        $array = array(
-            'e-Mail ' => "email",
-            'Mot de Passe ' => "mdp",
-        );
     }
 
 /////////////////////////////////////////////
@@ -83,12 +79,14 @@ class CControleurFormulaire
     
     public function verificationAuth($Utilisateur)
     {
-        if ($_SESSION['mdp']==$Utilisateur['mdp'])
+        $tab=explode('/',$Utilisateur);
+        if (!empty($_SESSION['mdp']) AND $_SESSION['mdp']==$tab[2])
         {
-            $_SESSION['qualite']=$Utilisateur['qualite'];
-            echo "Yeah connexion complete ".$Utilisateur['nom'].'  '.$Utilisateur['prenom'];
-            
+            $_SESSION['qualite']=$tab[10];
+            echo "yeah connexion reussite Mr ".$tab[3].' '.$tab[4];
         }
+        
+
     }
 
 }
