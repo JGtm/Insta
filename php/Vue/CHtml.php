@@ -190,7 +190,7 @@ class CHtml
 	$corps .= '</p>';
 	$corps .= '<div class="clear"></div>';
 	// Lien "Lire la suite" à gerer je ne sais pas comment
-	$corps .= '<div class="right" align="right"><a href="" class="more">Lire la suite</a></div>';
+	$corps .= '<div align="right"><a href="" class="more">Lire la suite</a></div>';
 	$corps .= '</div>';
 	$corps .= '</div>';
 
