@@ -106,7 +106,7 @@ class CHtml
 	return $html;
     }
 
-    public function head($title)
+    private function head($title)
     {
 	$head = '<head>';
 	$head .= '<meta http-equiv="content-type" content="text/html; charset=UTF-8" />';
@@ -117,7 +117,7 @@ class CHtml
 	return $head;
     }
 
-    public function header($nav)
+    private function header($nav)
     {
 	$header = '<div class="header">';
 	$header .= '<div class="header-top">';
@@ -135,7 +135,7 @@ class CHtml
 	return $header;
     }
 
-    public function header_nav($nav)
+    private function header_nav($nav)
     {
 	$header_nav = '<div class="nav">';
 	$header_nav .= '<div class="bouton">';
@@ -147,7 +147,7 @@ class CHtml
 	return $header_nav;
     }
 
-    public function nav($liens)
+    private function nav($liens)
     {
 	$nav .= '<ul>';
 
@@ -161,7 +161,7 @@ class CHtml
 	return $nav;
     }
 
-    public function corps($titreContenu, $contenu, $lienImage = '', $titreH2 = '', $welcome = '')
+    private function corps($titreContenu, $contenu, $lienImage = '', $titreH2 = '', $welcome = '')
     {
 	$corps = '<div class="corps">';
 
@@ -197,7 +197,7 @@ class CHtml
 	return $corps;
     }
 
-    public function ancre()
+    private function ancre()
     {
 	$ancre = '<div class="blocktotop">';
 	$ancre .= '<a id="totop" href="#" style="outline: medium none;">Retourner en haut de page</a>';
@@ -206,7 +206,7 @@ class CHtml
 	return $ancre;
     }
 
-    public function footer($nav)
+    private function footer($nav)
     {
 	$footer = '<div class="footer">';
 	$footer .= '<div class="footer-top">';
@@ -214,7 +214,7 @@ class CHtml
 	$footer .= '<p>';
 	$footer .= '<span class="siteName">Happy Family </span>';
 	$footer .= '© 2012 | ';
-	$footer .= '<a href="http://livedemo00.template-help.com/joomla_41255/index.php/privacy-policy">Politique de confidentialité</a>';
+	$footer .= '<a href="?privacy-policy">Politique de confidentialité</a>';
 	$footer .= '</p>';
 	$footer .= '</div>';
 	$footer .= $this->footer_nav($nav);
@@ -225,7 +225,7 @@ class CHtml
 	return $footer;
     }
 
-    public function footer_nav($nav)
+    private function footer_nav($nav)
     {
 	$footer_nav = '<div class="footer-nav">';
 	$footer_nav .= $this->nav($nav);
