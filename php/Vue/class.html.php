@@ -6,11 +6,11 @@ class Vue_html
     {
 	$html = '<!DOCTYPE html>';
 	$html .= '<html>';
-	$html .= head($nomDeLaPage);
-	$html .= header($tabLiens);
-	$html .= corps($titreContenu, $contenu, $lienImage, $titreH2, $welcome);
-	$html .= ancre();
-	$html .= footer($tabLiens);
+	$html .= $this->head($nomDeLaPage);
+	$html .= $this->header($tabLiens);
+	$html .= $this->corps($titreContenu, $contenu, $lienImage, $titreH2, $welcome);
+	$html .= $this->ancre();
+	$html .= $this->footer($tabLiens);
 	$html .= '</html>';
 
 	return $html;
@@ -37,7 +37,7 @@ class Vue_html
 	$header .= '<span class="phone"> Appelez nous : 06 52 80 81 77</span>';
 	$header .= '</div>';
 	$header .= '<div class="clear "></div>';
-	$header .= header_nav($nav);
+	$header .= $this->header_nav($nav);
 	$header .= '<div class = "clear"></div>';
 	$header .= '</div>';
 	$header .= '</div>';
@@ -49,7 +49,7 @@ class Vue_html
     {
 	$header_nav = '<div class="nav">';
 	$header_nav .= '<div class="bouton">';
-	$header_nav .= nav($nav);
+	$header_nav .= $this->nav($nav);
 	$header_nav .= '</div>';
 	$header_nav .= '<div class = "search"></div>';
 	$header_nav .= '</div>';
@@ -61,7 +61,7 @@ class Vue_html
     {
 	$nav .= '<ul>';
 
-	foreach ($liens AS $lien => $titreLien)
+	foreach ($liens AS $titreLien => $lien)
 	{
 	    $nav .= '<li><a href="' . $lien . '">' . $titreLien . '</a></li>';
 	}
@@ -123,11 +123,11 @@ class Vue_html
 	$footer .= '<div class="footer-info">';
 	$footer .= '<p>';
 	$footer .= '<span class="siteName">Happy Family </span>';
-	$footer .= '© 2012 |';
+	$footer .= '© 2012 | ';
 	$footer .= '<a href="http://livedemo00.template-help.com/joomla_41255/index.php/privacy-policy">Politique de confidentialité</a>';
 	$footer .= '</p>';
 	$footer .= '</div>';
-	$footer .= footer_nav($nav);
+	$footer .= $this->footer_nav($nav);
 	$footer .= '<div class="clear"></div>';
 	$footer .= '</div>';
 	$footer .= '</div>';
@@ -138,7 +138,7 @@ class Vue_html
     public function footer_nav($nav)
     {
 	$footer_nav = '<div class="footer-nav">';
-	$footer_nav .= nav($nav);
+	$footer_nav .= $this->nav($nav);
 	$footer_nav .= '</div>';
 
 	return $footer_nav;
