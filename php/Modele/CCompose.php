@@ -1,12 +1,12 @@
 <?php
 
 
-require_once('class.commande.php');
+require_once('CCommande.php');
 
 
-require_once('class.produit.php');
+require_once('CProduit.php');
 
-class Modele_compose
+class CCompose
 {
 
     // --- ASSOCIATIONS ---
