@@ -2,14 +2,6 @@
 
 class Vue_html
 {
-
-//    $liens = array ('/Insta/index.php' => 'home',
-//	    ' ' => 'about',
-//	    ' ' => 'services',
-//	    ' ' => 'menu',
-//	     '?page=authentification' => 's\identifier',
-//	    ' ' => 'contact');
-
     public function html($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2 = '', $welcome = '')
     {
 	$html = '<!DOCTYPE html>';
@@ -118,7 +110,7 @@ class Vue_html
     public function ancre()
     {
 	$ancre = '<div class="blocktotop">';
-	$ancre .= '<a id="totop" href="#" style="outline: medium none;">Scroll to Top</a>';
+	$ancre .= '<a id="totop" href="#" style="outline: medium none;">Retourner en haut de page</a>';
 	$ancre .= '</div>';
 
 	return $ancre;
@@ -132,7 +124,7 @@ class Vue_html
 	$footer .= '<p>';
 	$footer .= '<span class="siteName">Happy Family </span>';
 	$footer .= '© 2012 |';
-	$footer .= '<a href="http://livedemo00.template-help.com/joomla_41255/index.php/privacy-policy">Privacy Policy</a>';
+	$footer .= '<a href="http://livedemo00.template-help.com/joomla_41255/index.php/privacy-policy">Politique de confidentialité</a>';
 	$footer .= '</p>';
 	$footer .= '</div>';
 	$footer .= footer_nav($nav);
