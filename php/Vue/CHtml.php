@@ -1,6 +1,6 @@
 <?php
 
-class Vue_html
+class CHtml
 {
     public function html($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2 = '', $welcome = '')
     {
@@ -33,8 +33,8 @@ class Vue_html
 	$header .= '<div class="header-top">';
 	$header .= '<div class="header-logo"></div>';
 	$header .= '<div class="header-contact">';
-	$header .= '<span>Des Questions ?</span>';
-	$header .= '<span class="phone"> Appelez nous : 06 52 80 81 77</span>';
+	$header .= '<span>Des Questions ? </span>';
+	$header .= '<span class="phone">Appelez nous : 06 52 80 81 77</span>';
 	$header .= '</div>';
 	$header .= '<div class="clear "></div>';
 	$header .= $this->header_nav($nav);

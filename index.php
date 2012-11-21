@@ -13,12 +13,12 @@ if (isset($_POST['email']) AND $_POST['email'] != '' AND isset($_POST['mdp']) AN
 
 <?php
 
-require_once 'php/Vue/class.html.php';
+require_once 'php/Vue/CHtml.php';
 require_once 'php/Controleur/CControleurMain.php';
 
 $controleurSpe = new CControleurMain($_GET['page']);
 
-
+$nomDeLaPage = 'Home';
 $titreH2 = 'hello guest!';
 $welcome = 'Welcome to our pizza parlour with its friendly hospitality! Try our famous fresh made Italian pizzas with only the freshest ingredients.';
 $titreContenu = 'The Best From Our Chef';
@@ -27,12 +27,13 @@ $tabLiens =     $liens = array ('home' => '/Insta/index.php',
 	    'about' => ' ',
 	    'services' => ' ',
 	    'menu' => ' ',
+	    'lala' => ' ',
 	    's\'identifier' => '?page=authentification',
 	    'contact' => ' ');
 $contenu = '<p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et quasmo- lestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui...</p>
 <p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et quasmo- lestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui...</p>
 <p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et quasmo- lestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui...</p>';
 
-$html = new Vue_html();
+$html = new CHtml();
 echo $html->html($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2, $welcome);
 ?>		
