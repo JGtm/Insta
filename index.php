@@ -13,9 +13,9 @@ if (isset($_POST['email']) AND $_POST['email'] != '' AND isset($_POST['mdp']) AN
 
 
 <?php
-require_once 'php/Controleur/class.controleurMain.php';
+require_once 'php/Controleur/CControleurMain.php';
 
-$controleurSpe = new Controleur_Main($_GET['page']);
+$controleurSpe = new CControleurMain($_GET['page']);
 
 
 ?>

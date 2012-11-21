@@ -1,6 +1,6 @@
 <?php
 
-require_once 'CControleurAuth.php';
+require_once 'CControleurFormulaire.php';
 require_once 'php/Modele/CBdd.php';
 
 class CControleurMain
@@ -16,7 +16,7 @@ class CControleurMain
         switch ($page)
         {
             case 'authentification':
-                $this->controleurSpe = new Controleur_Formulaire();
+                $this->controleurSpe = new CControleurFormulaire();
 
 
                 $array = array
