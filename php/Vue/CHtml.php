@@ -2,15 +2,105 @@
 
 class CHtml
 {
-    public function html($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2 = '', $welcome = '')
+
+    private $nomDeLaPage;
+    private $tabLiens;
+    private $titreContenu;
+    private $contenu;
+    private $lienImage;
+    private $titreH2;
+    private $welcome;
+
+    function __construct($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage = '', $titreH2 = '', $welcome = '')
+    {
+	$this->nomDeLaPage = $nomDeLaPage;
+	$this->tabLiens = $tabLiens;
+	$this->titreContenu = $titreContenu;
+	$this->contenu = $contenu;
+	$this->lienImage = $lienImage;
+	$this->titreH2 = $titreH2;
+	$this->welcome = $welcome;
+    }
+
+    public function getNomDeLaPage()
+    {
+	return $this->nomDeLaPage;
+    }
+
+    public function setNomDeLaPage($nomDeLaPage)
+    {
+	$this->nomDeLaPage = $nomDeLaPage;
+    }
+
+    public function getTabLiens()
+    {
+	return $this->tabLiens;
+    }
+
+    public function setTabLiens($tabLiens)
+    {
+	$this->tabLiens = $tabLiens;
+    }
+
+    public function getTitreContenu()
+    {
+	return $this->titreContenu;
+    }
+
+    public function setTitreContenu($titreContenu)
+    {
+	$this->titreContenu = $titreContenu;
+    }
+
+    public function getContenu()
+    {
+	return $this->contenu;
+    }
+
+    public function setContenu($contenu)
+    {
+	$this->contenu = $contenu;
+    }
+
+    public function getLienImage()
+    {
+	return $this->lienImage;
+    }
+
+    public function setLienImage($lienImage)
+    {
+	$this->lienImage = $lienImage;
+    }
+
+    public function getTitreH2()
+    {
+	return $this->titreH2;
+    }
+
+    public function setTitreH2($titreH2)
+    {
+	$this->titreH2 = $titreH2;
+    }
+
+    public function getWelcome()
+    {
+	return $this->welcome;
+    }
+
+    public function setWelcome($welcome)
+    {
+	$this->welcome = $welcome;
+    }
+
+    public function html()
     {
 	$html = '<!DOCTYPE html>';
 	$html .= '<html>';
-	$html .= $this->head($nomDeLaPage);
-	$html .= $this->header($tabLiens);
-	$html .= $this->corps($titreContenu, $contenu, $lienImage, $titreH2, $welcome);
+	$html .= $this->head($this->nomDeLaPage);
+	$html .= $this->header($this->tabLiens);
+	$html .= $this->corps($this->titreContenu, $this->contenu, $this->lienImage, $this->titreH2, $this->welcome);
 	$html .= $this->ancre();
-	$html .= $this->footer($tabLiens);
+	$html .= $this->footer($this->tabLiens);
 	$html .= '</html>';
 
 	return $html;
