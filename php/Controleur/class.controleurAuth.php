@@ -4,25 +4,30 @@ class Controleur_Formulaire
 {
 
 //put your code here
-    /////////////////////////////////////////////
-    //Constructeur///////////////////////////////
-    /////////////////////////////////////////////
+/////////////////////////////////////////////
+//Constructeur///////////////////////////////
+/////////////////////////////////////////////
     function __construct()
+    {
+        $array = array(
+            'e-Mail ' => "email",
+            'Mot de Passe ' => "mdp",
+        );
+    }
+
+/////////////////////////////////////////////
+//fonctions//////////////////////////////////
+/////////////////////////////////////////////
+
+    public function validFormulaireAuth()
     {
         
     }
 
-    /////////////////////////////////////////////
-    //fonctions//////////////////////////////////
-    /////////////////////////////////////////////
-
-    public function validFormulaireAuth($leMotdePasse)
-    {
-      
-    }
-
     public function genererFormulaireAuth()
     {
+
+
         $formulaireAuth = '';
         $formulaireAuth.='<form method="POST" action="#">';
         $formulaireAuth.='<table border = "0">';
@@ -46,5 +51,41 @@ class Controleur_Formulaire
 
         return $formulaireAuth;
     }
+
+    public function genererFormulaire($array)
+    {
+//        $array = array
+//        (
+//            'e-Mail :' => "email",
+//            'Mot de Passe :' => "mdp",
+//        );
+        $formulaire = '';
+        $formulaire.='<form method="POST" action="#">';
+        $formulaire.='<table border = "0">';
+        $formulaire.='<tbody>';
+
+        foreach ($array as $key => $value)
+        {
+            $formulaire.='<tr>';
+            $formulaire.='<td><label>';
+            $formulaire.= $key;
+            $formulaire.='</label></td>';
+            $formulaire.='<td><input type="text" name=';
+            $formulaire.= $value;
+            $formulaire.=' value="" /></td>';
+            $formulaire.='</tr>';
+        }
+        $formulaire.='<tr>';
+        $formulaire.='<td><td align="right">';
+        $formulaire.='<input type="submit" name="valider" value="Valider"  />';
+        $formulaire.='</td>';
+        $formulaire.='</tr>';
+        $formulaire.='</tbody>';
+        $formulaire.='</table>';
+        $formulaire.='</form>';
+        return $formulaire;
+    }
+
 }
+
 ?>

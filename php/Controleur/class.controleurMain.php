@@ -18,10 +18,18 @@ class Controleur_Main
             case 'authentification':
                 $this->controleurSpe = new Controleur_Formulaire();
                 echo $this->controleurSpe->genererFormulaireAuth();
+        
+        $array = array
+        (
+            'e-Mail :' => "email",
+            'Mot de Passe :' => "mdp",
+        );
+         echo $this->controleurSpe->genererFormulaire($array);
+        
                 
                 $acn=$bdd->seConnecter();
                 
-                $leMotdePasse=$bdd->selectionner($acn, 'utilisateur', 'mdp', $_SESSION['mdp']);
+                $leMotdePasse=$bdd->selectionner($acn, 'Utilisateurs', 'mdp', $_SESSION['mdp']);
                 if ($leMotdePasse!=null)
                 {
                     echo $leMotdePasse;
