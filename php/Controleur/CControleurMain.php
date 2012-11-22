@@ -61,7 +61,8 @@ class CControleurMain
 		// Test
 		$base = 'creme fraiche';
 		$listePizza = new CPizza($base);
-		
+		$lp= $listePizza->listePizza();
+		echo $lp;
 		
 		break;
 	}
