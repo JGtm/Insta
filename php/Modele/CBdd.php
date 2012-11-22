@@ -77,10 +77,11 @@ class CBdd
 
 	$query = 'SELECT ';
 	$query .= $champs . ' ';
+	$query .= 'FROM ' . $tableFrom;
 	
 	if ($where != '')
 	{
-	    $query .= 'WHERE ' . $where;
+	    $query .= ' WHERE ' . $where;
 	}
 	
 	if ($orderBy != '')
