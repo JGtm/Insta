@@ -17,6 +17,9 @@ if (isset($_POST['email']) AND $_POST['email'] != '' AND isset($_POST['mdp']) AN
 
 require_once 'php/Vue/CHtml.php';
 require_once 'php/Controleur/CControleurMain.php';
+require_once 'php/Modele/CAdministrateur.php';
+
+
 
 $controleurSpe = new CControleurMain($_GET['page']);
 

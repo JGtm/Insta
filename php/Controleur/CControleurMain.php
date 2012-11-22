@@ -16,7 +16,7 @@ class CControleurMain
 
     function __construct($page)
     {
-        $this->bdd = CBdd::getInstance();
+        $this->bdd =new CBdd();
 
         switch ($page)
         {
