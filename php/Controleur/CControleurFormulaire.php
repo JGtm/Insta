@@ -9,6 +9,7 @@ class CControleurFormulaire
 /////////////////////////////////////////////
     function __construct()
     {
+        
     }
 
 /////////////////////////////////////////////
@@ -76,19 +77,33 @@ class CControleurFormulaire
         $formulaire.='</form>';
         return $formulaire;
     }
-    
+
     public function verificationAuth($Utilisateur)
     {
-        $tab=explode('/',$Utilisateur);
-        if (!empty($_SESSION['mdp']) AND $_SESSION['mdp']==$tab[2])
+        $tab = explode('/', $Utilisateur);
+        if (!empty($_SESSION['mdp']) AND $_SESSION['mdp'] == $tab[2])
         {
-            $_SESSION['qualite']=$tab[10];
-            echo "yeah connexion reussite Mr ".$tab[3].' '.$tab[4];
+            $_SESSION['qualite'] = $tab[10];
+            switch ($_SESSION['qualite'])
+            {
+
+                //---Dans le cas ou l'utilisateur est un ADMIN 
+                case 'SBO':
+                    $admin = CAdministrateur::getInstance();
+
+                //---Dans le cas ou l'utilisateur est un EMPLOYER        
+                case 'BO':
+                    echo "bo";
+                //---Dans le cas ou l'utilisateur est un CLIENT
+                case 'FO':
+                    echo "fo";
+
+                //---Autre cas
+                default:
+                    echo "erreur";
+            }
         }
-        
-
     }
-
 }
 
 ?>

@@ -1,16 +1,12 @@
 <?php
 
-/*
-  SINGLETON
- */
-
 class CBdd
 {
 
     ////////////////////////////////////////////
     //Variables/////////////////////////////////
     ////////////////////////////////////////////
-    private static $instance;
+
     private $pilote = 'mysql';
     private $serveur = 'localhost';  //serveur
     private $port = '3306';           //port de connexion
@@ -27,20 +23,7 @@ class CBdd
         
     }
 
-    // --- La methode getInstance() permet en mode derive l'instanciation unique
-    public static function getInstance()
-    {
-        if (!isSet(self::$instance))
-        {
-            $classe = __CLASS__;
-            self::$instance = new $classe();
-            self::seConnecter();
-            //echo "<br />La classe est instanciee";
-        }
-        else
-            echo "<br />La classe est deja instanciee";
-        return self::$instance;
-    }
+
 
     /////////////////////////////////////////////
     //fonctions//////////////////////////////////
@@ -75,11 +58,7 @@ class CBdd
         $lcn = null;
     }
 
-    //---Empeche la creation de clne (singleton)---
-    public function __clone()
-    {
-        trigger_error('Le clonage est interdit.', E_USER_ERROR);
-    }
+
     
         //---Fonction de generation des where---
         private function genererWhere($atColonnesValeurs)
@@ -145,6 +124,52 @@ class CBdd
         return $lsContenu;
     }
 
+        //---Fonction selection---
+    public function selectionner1($acn, $asTable, $asColonnes = "*", $atColonnesValeurs = "")
+    {
+        $lsContenu = "";
+        $lsWhere = "";
+        $tValeurs = array();
+
+        if ($atColonnesValeurs != "")
+        {
+            foreach ($atColonnesValeurs as $colonne => $valeur)
+            {
+                $tValeurs[] = $valeur;
+            }
+            $lsWhere = $this->genererWhere($atColonnesValeurs);
+        }
+
+        $lsSQL = "SELECT $asColonnes FROM $asTable $lsWhere";
+
+        //echo $lsSQL;
+
+        try
+        {
+            $lrs = $acn->prepare($lsSQL);
+            $lrs->execute($tValeurs);
+            $lrs->setFetchMode(PDO::FETCH_ASSOC);
+
+            foreach ($lrs as $enr)
+            {              
+                foreach ($enr as $valeur)
+                {
+                    $lsContenu[]= $valeur;
+                }
+
+            }
+          
+
+            $lrs->closeCursor();
+        }
+        catch (PDOException $e)
+        {
+            //$lsContenu .= "Echec de l'execution : " . $e->getMessage();
+        }
+
+//        return $lsContenu;
+        return $lsContenu;
+    }
 
     /////////////////////////////////////////////
     //Accesseurs/////////////////////////////////
