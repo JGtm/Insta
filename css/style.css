@@ -179,7 +179,7 @@ h2.title {
     margin-right : 10px;
 }
 .more:hover {
-     background: url("../images/button_tail.png") repeat-x scroll 0 -36px transparent;
+    background: url("../images/button_tail.png") repeat-x scroll 0 -36px transparent;
     border: medium none;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
     display: inline-block;

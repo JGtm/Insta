@@ -23,6 +23,8 @@ class CPizza extends CProduit
 	
 	$listePizza = $bdd->selectionner($connexion, 'Pizzas p INNER JOIN Bases b ON p.base_id = b.base_id', '*', $this->base);
 	
+	$bdd->seDeconnecter($connexion);
+	
 	return $listePizza;
     }
 

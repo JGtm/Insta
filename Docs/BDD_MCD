@@ -1,4 +1,4 @@
-# script crŽŽ le : Tue Nov 20 09:30:15 CET 2012 -   syntaxe MySQL ;
+# script crŽŽ le : Thu Nov 22 10:56:13 CET 2012 -   syntaxe MySQL ;
 
 # use  VOTRE_BASE_DE_DONNEE ;
 
@@ -49,7 +49,6 @@ libelle_produit VARCHAR(45),
 prix_produit FLOAT,
 description VARCHAR(255),
 image VARCHAR(255),
-id_commande INT(12) NOT NULL,
 id_type_produit INT NOT NULL,
 PRIMARY KEY (id_produit) ) ENGINE=InnoDB;
 
@@ -64,11 +63,18 @@ id_ingredient INT(12) NOT NULL,
 PRIMARY KEY (id_pizza,
  id_ingredient) ) ENGINE=InnoDB;
 
+DROP TABLE IF EXISTS Comprendre ;
+CREATE TABLE Comprendre (id_commande int AUTO_INCREMENT(12) NOT NULL,
+id_produit INT NOT NULL,
+PRIMARY KEY (id_commande,
+ id_produit) ) ENGINE=InnoDB;
+
 ALTER TABLE Commandes ADD CONSTRAINT FK_Commandes_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs (id_utilisateur);
 
 ALTER TABLE Pizzas ADD CONSTRAINT FK_Pizzas_id_base FOREIGN KEY (id_base) REFERENCES Bases (id_base);
 ALTER TABLE Pizzas ADD CONSTRAINT FK_Pizzas_id_produit FOREIGN KEY (id_produit) REFERENCES Produits (id_produit);
-ALTER TABLE Produits ADD CONSTRAINT FK_Produits_id_commande FOREIGN KEY (id_commande) REFERENCES Commandes (id_commande);
 ALTER TABLE Produits ADD CONSTRAINT FK_Produits_id_type_produit FOREIGN KEY (id_type_produit) REFERENCES Types_produits (id_type_produit);
 ALTER TABLE Composer ADD CONSTRAINT FK_Composer_id_pizza FOREIGN KEY (id_pizza) REFERENCES Pizzas (id_pizza);
 ALTER TABLE Composer ADD CONSTRAINT FK_Composer_id_ingredient FOREIGN KEY (id_ingredient) REFERENCES Ingredients (id_ingredient);
+ALTER TABLE Comprendre ADD CONSTRAINT FK_Comprendre_id_commande FOREIGN KEY (id_commande) REFERENCES Commandes (id_commande);
+ALTER TABLE Comprendre ADD CONSTRAINT FK_Comprendre_id_produit FOREIGN KEY (id_produit) REFERENCES Produits (id_produit);

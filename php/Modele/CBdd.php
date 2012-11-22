@@ -18,7 +18,7 @@ class CBdd
     //Constructeur///////////////////////////////
     /////////////////////////////////////////////
 
-    private function __construct()
+    function __construct()
     {
         
     }
