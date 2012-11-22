@@ -1,6 +1,7 @@
 <?php
 
 require_once 'php/Modele/CBdd.php';
+require_once 'php/Modele/CPizza.php';
 require_once 'php/Vue/CHtml.php';
 
 function __autoload($classe)
@@ -57,7 +58,11 @@ class CControleurMain
 
 
 	    case 'listePizza':
-		$listePizza = new CPizza();
+		// Test
+		$base = 'creme fraiche';
+		$listePizza = new CPizza($base);
+		
+		
 		break;
 	}
     }

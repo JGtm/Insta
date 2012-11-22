@@ -2,7 +2,7 @@
 
 require_once('CPizza.php');
 require_once('CProduit.php');
-require_once ('CBdd');
+require_once ('CBdd.php');
 
 class CPizza extends CProduit
 {
