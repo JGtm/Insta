@@ -121,6 +121,7 @@ body {
     width: 938px;
     margin: auto;
     margin-top: 10px;
+    min-height: 350px;
 }
 .contenu {
     background-color: #ffffff;
