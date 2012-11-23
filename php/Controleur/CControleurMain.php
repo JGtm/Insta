@@ -24,10 +24,10 @@ class CControleurMain
     {
         $this->bdd = new CBdd();
 
-        switch ($page)
-        {
-            case 'authentification':
-                $this->controleurSpe = new CControleurFormulaire();
+	switch ($page)
+	{
+	    case 'authentification':
+		$this->controleurSpe = new CControleurFormulaire();
 
 
                 $array = array
@@ -100,12 +100,12 @@ class CControleurMain
 
     public function getControleurSpe()
     {
-        return $this->controleurSpe;
+	return $this->controleurSpe;
     }
 
     public function setControleurSpe($controleurSpe)
     {
-        $this->controleurSpe = $controleurSpe;
+	$this->controleurSpe = $controleurSpe;
     }
 
 }
