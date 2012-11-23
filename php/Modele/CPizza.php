@@ -3,12 +3,14 @@
 require_once('CPizza.php');
 require_once('CProduit.php');
 require_once ('CBdd.php');
+require_once ('CIngredient.php');
 
 class CPizza extends CProduit
 {
 
     public $base = '';
     public $taille = '';
+    private $ing= array(CIgredient);
 
     function __construct($base, $taille = '')
     {
