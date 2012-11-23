@@ -18,7 +18,7 @@ class CBdd
     //Constructeur///////////////////////////////
     /////////////////////////////////////////////
 
-    function __construct()
+    public function __construct()
     {
 	
     }
@@ -30,24 +30,24 @@ class CBdd
     //---Fonction de connexion a la base de donnée---
     public function seConnecter()
     {
-	//---on essaye d'executer des instructions qui pourraient generer des erreurs!
-	try
-	{
-	    //----on se connecte en utilisant les parametres
-	    $lcn = new PDO($this->getPilote() . ":host=" . $this->getServeur() . ";dbname=" . $this->getBd() . ";port=" . $this->getPort(), $this->getUt(), $this->getMdp());
-	    //---on modifie un des attribut par default pour gerer les erreur sur tt le script pas seulement sur la connection
-	    $lcn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	    $lcn->exec("SET NAMES 'UTF8'");
-	}
-	//on attrape les erreur a ce niveau
-	catch (PDOException $e)
-	{
-	    $lcn = "Echec de l'exécution : " . $e->getMessage();
-	    //----
-	    //$lcn = null;
-	}
-	//---la fonction renvoi l'objet de connexion $lcn. elle le renvoi au script qui appelle la fonction
-	return $lcn;
+        //---on essaye d'executer des instructions qui pourraient generer des erreurs!
+        try
+        {
+            //----on se connecte en utilisant les parametres
+            $lcn = new PDO($this->getPilote() . ":host=" . $this->getServeur() . ";dbname=" . $this->getBd() . ";port=" . $this->getPort(), $this->getUt(), $this->getMdp());
+            //---on modifie un des attribut par default pour gerer les erreur sur tt le script pas seulement sur la connection
+            $lcn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $lcn->exec("SET NAMES 'UTF8'");
+        }
+        //on attrape les erreur a ce niveau
+        catch (PDOException $e)
+        {
+            $lcn = "Echec de l'exécution : " . $e->getMessage();
+            //----
+            //$lcn = null;
+        }
+        //---la fonction renvoi l'objet de connexion $lcn. elle le renvoi au script qui appelle la fonction
+        return $lcn;
     }
 
     //---Fonction de deconnexion a la base de donnée---

@@ -16,43 +16,15 @@ class CControleurFormulaire
 //fonctions//////////////////////////////////
 /////////////////////////////////////////////
 
-    public function validFormulaireAuth()
+
+    public function validerFormulaire($array)
     {
-	
+    
     }
-
-//    public function genererFormulaireAuth()
-//    {
-//
-//
-//        $formulaireAuth = '';
-//        $formulaireAuth.='<form method="POST" action="#">';
-//        $formulaireAuth.='<table border = "0">';
-//        $formulaireAuth.='<tbody>';
-//        $formulaireAuth.='<tr>';
-//        $formulaireAuth.='<td><label>email : </label></td>';
-//        $formulaireAuth.='<td><input type="text" name="email" value="" /></td>';
-//        $formulaireAuth.='</tr>';
-//        $formulaireAuth.='<tr>';
-//        $formulaireAuth.='<td><label>Mot de passe : </label></td>';
-//        $formulaireAuth.='<td><input type="password" name="mdp" value="" /></td>';
-//        $formulaireAuth.='</tr>';
-//        $formulaireAuth.='<tr>';
-//        $formulaireAuth.='<td><td align="right">';
-//        $formulaireAuth.='<input type="submit" name="valider" value="Valider"  />';
-//        $formulaireAuth.='</td>';
-//        $formulaireAuth.='</tr>';
-//        $formulaireAuth.='</tbody>';
-//        $formulaireAuth.='</table>';
-//        $formulaireAuth.='</form>';
-//
-//        return $formulaireAuth;
-//    }
-
-    public function genererFormulaire($array)
+    public function genererFormulaire($array,$lien)
     {
 	$formulaire = '';
-	$formulaire.='<form method="POST" action="?page=validation">';
+	$formulaire.='<form method="POST" action="?page='.$lien.'">';
 	$formulaire.='<table border = "0">';
 	$formulaire.='<tbody>';
 
@@ -62,19 +34,34 @@ class CControleurFormulaire
 	    $formulaire.='<td><label>';
 	    $formulaire.= $key;
 	    $formulaire.='</label></td>';
+            if ($value=='mdp')
+                {
+                $formulaire.='<td><input type="password" name=';
+                }
+                else
+                {
 	    $formulaire.='<td><input type="text" name=';
+                }
 	    $formulaire.= $value;
 	    $formulaire.=' value="" /></td>';
 	    $formulaire.='</tr>';
 	}
 	$formulaire.='<tr>';
-	$formulaire.='<td><td align="right">';
-	$formulaire.='<input type="submit" name="valider" value="Valider"  />';
+	$formulaire.='<td>';
+        if ($lien!='validationInscription')
+        {
+        $formulaire.='<a href="?page=inscription" >pas encore inscrit ?</a>';
+        }
+        $formulaire.='</td>';
+        $formulaire.='<td align="right">';
+	$formulaire.='<input type="submit" name="valider" value="Valider"/>';
 	$formulaire.='</td>';
 	$formulaire.='</tr>';
 	$formulaire.='</tbody>';
 	$formulaire.='</table>';
 	$formulaire.='</form>';
+        //$formulaire.='<label id="msg"><?php echo'. $lsMessage.'</label>';
+
 	return $formulaire;
     }
 
@@ -87,24 +74,36 @@ class CControleurFormulaire
 	    switch ($_SESSION['qualite'])
 	    {
 
-		//---Dans le cas ou l'utilisateur est un ADMIN 
-		case 'SBO':
-		    $admin = CAdministrateur::getInstance();
+                //---Dans le cas ou l'utilisateur est un ADMIN 
+                case 'SBO':
+                    $admin = CAdministrateur::getInstance();
+                    break;
 
 		//---Dans le cas ou l'utilisateur est un EMPLOYER        
 		case 'BO':
 		    echo "bo";
+                    break;
 		//---Dans le cas ou l'utilisateur est un CLIENT
 		case 'FO':
 		    echo "fo";
+                    break;
 
 		//---Autre cas
 		default:
 		    echo "erreur";
+                    break;
 	    }
 	}
     }
 
+    public function pageAdmin($admin)
+    {
+        $nomDeLaPage='admin';
+        $tabLiens=
+        $pageAdmin =new CHtml($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2, $welcome);
+    }
+
 }
+
 
 ?>

@@ -2,105 +2,35 @@
 
 class CHtml
 {
+    private $tab;
 
-    private $nomDeLaPage;
-    private $tabLiens;
-    private $titreContenu;
-    private $contenu;
-    private $lienImage;
-    private $titreH2;
-    private $welcome;
 
-    function __construct($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage = '', $titreH2 = '', $welcome = '')
+    function __construct($tab)
     {
-	$this->nomDeLaPage = $nomDeLaPage;
-	$this->tabLiens = $tabLiens;
-	$this->titreContenu = $titreContenu;
-	$this->contenu = $contenu;
-	$this->lienImage = $lienImage;
-	$this->titreH2 = $titreH2;
-	$this->welcome = $welcome;
+        $this->tab=$tab;
+
+    }
+    public function getTab()
+    {
+        return $this->tab;
     }
 
-    public function getNomDeLaPage()
+    public function setTab($tab)
     {
-	return $this->nomDeLaPage;
+        $this->tab = $tab;
     }
 
-    public function setNomDeLaPage($nomDeLaPage)
-    {
-	$this->nomDeLaPage = $nomDeLaPage;
-    }
-
-    public function getTabLiens()
-    {
-	return $this->tabLiens;
-    }
-
-    public function setTabLiens($tabLiens)
-    {
-	$this->tabLiens = $tabLiens;
-    }
-
-    public function getTitreContenu()
-    {
-	return $this->titreContenu;
-    }
-
-    public function setTitreContenu($titreContenu)
-    {
-	$this->titreContenu = $titreContenu;
-    }
-
-    public function getContenu()
-    {
-	return $this->contenu;
-    }
-
-    public function setContenu($contenu)
-    {
-	$this->contenu = $contenu;
-    }
-
-    public function getLienImage()
-    {
-	return $this->lienImage;
-    }
-
-    public function setLienImage($lienImage)
-    {
-	$this->lienImage = $lienImage;
-    }
-
-    public function getTitreH2()
-    {
-	return $this->titreH2;
-    }
-
-    public function setTitreH2($titreH2)
-    {
-	$this->titreH2 = $titreH2;
-    }
-
-    public function getWelcome()
-    {
-	return $this->welcome;
-    }
-
-    public function setWelcome($welcome)
-    {
-	$this->welcome = $welcome;
-    }
+   
 
     public function html()
     {
 	$html = '<!DOCTYPE html>';
 	$html .= '<html>';
-	$html .= $this->head($this->nomDeLaPage);
-	$html .= $this->header($this->tabLiens);
-	$html .= $this->corps($this->titreContenu, $this->contenu, $this->lienImage, $this->titreH2, $this->welcome);
+	$html .= $this->head($this->tab['nomDeLaPage']);
+	$html .= $this->header($this->tab['tabLiens']);
+	$html .= $this->corps($this->tab['titreContenu'], $this->tab['contenu'], $this->tab['lienImage'], $this->tab['titreH2'], $this->tab['welcome']);
 	$html .= $this->ancre();
-	$html .= $this->footer($this->tabLiens);
+	$html .= $this->footer($this->tab['tabLiens']);
 	$html .= '</html>';
 
 	return $html;
@@ -143,7 +73,6 @@ class CHtml
     private function nav($liens)
     {
 	$nav .= '<ul>';
-
 	foreach ($liens AS $titreLien => $lien)
 	{
 	    $nav .= '<li><a href="' . $lien . '">' . $titreLien . '</a></li>';
@@ -183,7 +112,7 @@ class CHtml
 	$corps .= '</p>';
 	$corps .= '<div class="clear"></div>';
 	// Lien "Lire la suite" à gerer je ne sais pas comment
-	$corps .= '<div align="right"><a href="" class="more">Lire la suite</a></div>';
+	//$corps .= '<div align="right"><a href="" class="more">Lire la suite</a></div>';
 	$corps .= '</div>';
 	$corps .= '</div>';
 

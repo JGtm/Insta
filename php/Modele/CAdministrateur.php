@@ -23,7 +23,7 @@ class CAdministrateur extends CUtilisateur
 	    'email' => $_SESSION['email']
 	);
 	$Utilisateur = $this->bdd->selectionner1($acn, 'Utilisateurs', '*', $tab);
-
+        $this->bdd->seDeconnecter($acn);
 	$this->setEmail($Utilisateur[1]);
 	$this->setMdp($Utilisateur[2]);
 	$this->setNom($Utilisateur[3]);
