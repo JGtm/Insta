@@ -38,7 +38,7 @@ class CControleurMain
                 $lien = 'validationAuth';
                 if (empty($_SESSION['qualite']))
                 {
-                    echo $this->controleurSpe->genererFormulaire($array,$lien);
+                    return $this->controleurSpe->genererFormulaire($array,$lien);
                 }
 
                 break;
@@ -57,7 +57,7 @@ class CControleurMain
                         );
                 $lien = 'validationInscription';
                 $this->controleurSpe = new CControleurFormulaire();
-                echo $this->controleurSpe->genererFormulaire($array,$lien);
+                return $this->controleurSpe->genererFormulaire($array,$lien);
                 
 
                 break;
@@ -92,7 +92,7 @@ class CControleurMain
                 $base = 'creme fraiche';
                 $listePizza = new CPizza($base);
                 $lp = $listePizza->listePizza();
-                echo $lp;
+                return $lp;
 
                 break;
         }
