@@ -126,6 +126,7 @@ body {
     background-color: #ffffff;
     margin-top: 10px;
     padding: 10px;
+    min-height: 350px;
 }
 .contenu img {
     float :right;
