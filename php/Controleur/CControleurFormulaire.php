@@ -1,5 +1,5 @@
 <?php
-
+require_once 'php/Modele/CAdministrateur.php';
 class CControleurFormulaire
 {
 
@@ -64,11 +64,13 @@ class CControleurFormulaire
 
     public function verificationAuth($Utilisateur)
     {
-        echo $Utilisateur;
+//        echo $Utilisateur;
 	$tab = explode('/', $Utilisateur);
+        var_dump($tab)."<br>";
 	if (!empty($_SESSION['mdp']) AND $_SESSION['mdp'] == $tab[2])
 	{
-	    $_SESSION['qualite'] = $tab[10];
+	    $_SESSION['qualite'] = $tab[9];
+            echo $_SESSION["qualite"];
 	    switch ($_SESSION['qualite'])
 	    {
 
@@ -76,6 +78,7 @@ class CControleurFormulaire
                 case 'SBO':
                     $admin = CAdministrateur::getInstance();
                     echo "sbo";
+                    return $admin;
                     break;
 
 		//---Dans le cas ou l'utilisateur est un EMPLOYER        

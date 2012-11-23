@@ -18,7 +18,7 @@ class CClient extends CUtilisateur
     private $ville = '';
 
     // --- OPERATIONS ---
-    function __construct($nom, $prenom, $email, $mdp, $adresse, $code_postal, $ville, $telephone)
+    function __construct($nom='', $prenom='', $email='', $mdp='', $adresse='', $code_postal='', $ville='', $telephone='')
     {
             parent::__construct($nom, $prenom, $email, $mdp, 'FO');
         

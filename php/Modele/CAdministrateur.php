@@ -12,7 +12,7 @@ class CAdministrateur extends CUtilisateur
     private $bdd;
 
     // --- OPERATIONS ---
-    function __construct($nom = '', $prenom = '', $email = '', $mdp = '')
+    protected function __construct($nom = '', $prenom = '', $email = '', $mdp = '')
     {
 	parent::__construct($nom = '', $prenom = '', $email = '', $mdp = '', 'SBO');
 	$this->bdd = new CBdd();
@@ -73,7 +73,7 @@ class CAdministrateur extends CUtilisateur
     {
 	
     }
-    
+        
 
 }
 

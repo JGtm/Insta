@@ -25,6 +25,6 @@ $tabResult=$controleurSpe->getTabVue();
 
 $html = new CHtml($tabResult);
 echo $html->html();
-
+//session_destroy();
 
 ?>		

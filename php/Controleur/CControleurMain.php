@@ -4,11 +4,12 @@ require_once 'php/Modele/CBdd.php';
 require_once 'php/Modele/CPizza.php';
 require_once 'php/Vue/CHtml.php';
 require_once 'php/Modele/CUtilisateur.php';
+require_once 'CControleurFormulaire.php';
 
-function __autoload($classe)
-{
-    require_once $classe . ".php";
-}
+//function __autoload($classe)
+//{
+//    require_once $classe . ".php";
+//}
 
 class CControleurMain
 {
@@ -43,17 +44,23 @@ class CControleurMain
                 $this->tabVue['lienImage'] = 'images/pizza.jpg';
                 $this->tabVue['welcome'] = 'Bienvenue';
                 $this->tabVue['titreH2'] = '';
+                if (empty($_SESSION['qualite']))
+                    $lien = 'authentification';
+                else
+                    $lien = 'deconnection';
+
                 $this->tabVue['tabLiens'] = array(
                     'home' => '/Insta/index.php',
                     'about' => '',
                     'services' => '',
                     'menu' => '?page=listePizza ',
                     'lala' => '',
-                    's\'identifier' => '?page=authentification',
+                    's\'identifier' => '?page=' . $lien,
                     'contact' => ' ');
+
                 return $this->tabVue;
 
-             break;
+                break;
             //---Page qui permet a l'utilisateur de se sonnecter
             case 'authentification':
                 $this->controleurSpe = new CControleurFormulaire();
@@ -75,13 +82,18 @@ class CControleurMain
                 $this->tabVue['lienImage'] = '';
                 $this->tabVue['welcome'] = '';
                 $this->tabVue['titreH2'] = '';
+                if (empty($_SESSION['qualite']))
+                    $lien = 'authentification';
+                else
+                    $lien = 'deconnection';
+
                 $this->tabVue['tabLiens'] = array(
                     'home' => '/Insta/index.php',
                     'about' => '',
                     'services' => '',
                     'menu' => '?page=listePizza ',
                     'lala' => '',
-                    's\'identifier' => '?page=authentification',
+                    's\'identifier' => '?page=' . $lien,
                     'contact' => ' ');
                 return $this->tabVue;
 
@@ -104,20 +116,25 @@ class CControleurMain
                 $this->controleurSpe = new CControleurFormulaire();
 
                 $contenu = $this->controleurSpe->genererFormulaire($array, $lien);
-                
+
                 $this->tabVue['nomdeLaPage'] = 'Inscription';
                 $this->tabVue['titreContenu'] = 'Inscrivez vous';
                 $this->tabVue['contenu'] = $contenu;
                 $this->tabVue['lienImage'] = '';
                 $this->tabVue['welcome'] = '';
                 $this->tabVue['titreH2'] = '';
+                if (empty($_SESSION['qualite']))
+                    $lien = 'authentification';
+                else
+                    $lien = 'deconnection';
+
                 $this->tabVue['tabLiens'] = array(
                     'home' => '/Insta/index.php',
                     'about' => '',
                     'services' => '',
                     'menu' => '?page=listePizza ',
                     'lala' => '',
-                    's\'identifier' => '?page=authentification',
+                    's\'identifier' => '?page=' . $lien,
                     'contact' => ' ');
 
 
@@ -125,23 +142,28 @@ class CControleurMain
 
             //---Page de validation de l'insciption
             case 'validationInscription':
-                
+
                 $this->tabVue['nomdeLaPage'] = 'Utilisateur';
                 $this->tabVue['titreContenu'] = 'Vos Information';
                 $this->tabVue['contenu'] = $contenu;
                 $this->tabVue['lienImage'] = '';
                 $this->tabVue['welcome'] = '';
                 $this->tabVue['titreH2'] = '';
+                if (empty($_SESSION['qualite']))
+                    $lien = 'authentification';
+                else
+                    $lien = 'deconnection';
+
                 $this->tabVue['tabLiens'] = array(
                     'home' => '/Insta/index.php',
                     'about' => '',
                     'services' => '',
                     'menu' => '?page=listePizza ',
                     'lala' => '',
-                    's\'identifier' => '?page=authentification',
+                    's\'identifier' => '?page=' . $lien,
                     'contact' => ' ');
-                
-                $user= new CClient($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp'],$_POST['adresse'],$_POST['code_postale'],$_POST['telephone'],$_POST['ville']);
+
+                $user = new CClient($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'], $_POST['adresse'], $_POST['code_postale'], $_POST['telephone'], $_POST['ville']);
                 $user->InsertClient();
 
 
@@ -165,26 +187,36 @@ class CControleurMain
 
 
                 $this->controleurSpe = new CControleurFormulaire();
-                $this->controleurSpe->verificationAuth($Utilisateur);
-                
+                $object = $this->controleurSpe->verificationAuth($Utilisateur);
+
                 $this->tabVue['nomdeLaPage'] = 'Utilisateur';
                 $this->tabVue['titreContenu'] = 'Vos Information';
                 $this->tabVue['contenu'] = $contenu;
                 $this->tabVue['lienImage'] = '';
                 $this->tabVue['welcome'] = '';
                 $this->tabVue['titreH2'] = '';
+                if (empty($_SESSION['qualite']))
+                    $lien = 'authentification';
+                else
+                    $lien = 'deconnection';
+
                 $this->tabVue['tabLiens'] = array(
                     'home' => '/Insta/index.php',
                     'about' => '',
                     'services' => '',
                     'menu' => '?page=listePizza ',
                     'lala' => '',
-                    's\'identifier' => '?page=authentification',
+                    's\'identifier' => '?page=' . $lien,
                     'contact' => ' ');
-                
+
                 return $this->tabVue;
 
                 break;
+            case 'deconnection':
+                session_destroy();
+                header('Location:index.php');
+                break;
+
 
 
             //---Page presentant les differentes pizzas  
@@ -208,6 +240,7 @@ class CControleurMain
     {
         $this->controleurSpe = $controleurSpe;
     }
+
     public function getTabVue()
     {
         return $this->tabVue;
@@ -217,7 +250,6 @@ class CControleurMain
     {
         $this->tabVue = $tabVue;
     }
-
 
 }
 
