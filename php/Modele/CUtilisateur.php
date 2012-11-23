@@ -23,6 +23,7 @@ abstract class CUtilisateur
 	$this->qualite = $qualite;
     }
 
+
     //---Getter Setter---
     public function getNom()
     {

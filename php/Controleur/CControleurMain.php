@@ -166,6 +166,23 @@ class CControleurMain
 
                 $this->controleurSpe = new CControleurFormulaire();
                 $this->controleurSpe->verificationAuth($Utilisateur);
+                
+                $this->tabVue['nomdeLaPage'] = 'Utilisateur';
+                $this->tabVue['titreContenu'] = 'Vos Information';
+                $this->tabVue['contenu'] = $contenu;
+                $this->tabVue['lienImage'] = '';
+                $this->tabVue['welcome'] = '';
+                $this->tabVue['titreH2'] = '';
+                $this->tabVue['tabLiens'] = array(
+                    'home' => '/Insta/index.php',
+                    'about' => '',
+                    'services' => '',
+                    'menu' => '?page=listePizza ',
+                    'lala' => '',
+                    's\'identifier' => '?page=authentification',
+                    'contact' => ' ');
+                
+                return $this->tabVue;
 
                 break;
 
