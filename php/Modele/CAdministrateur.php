@@ -12,9 +12,7 @@ class CAdministrateur extends CUtilisateur
     private $bdd;
 
     // --- OPERATIONS ---
-
-   protected function __construct($nom='', $prenom='', $email='', $mdp='')
-
+    function __construct($nom = '', $prenom = '', $email = '', $mdp = '')
     {
 	parent::__construct($nom = '', $prenom = '', $email = '', $mdp = '', 'SBO');
 	$this->bdd = new CBdd();
@@ -25,7 +23,7 @@ class CAdministrateur extends CUtilisateur
 	    'email' => $_SESSION['email']
 	);
 	$Utilisateur = $this->bdd->selectionner1($acn, 'Utilisateurs', '*', $tab);
-
+        $this->bdd->seDeconnecter($acn);
 	$this->setEmail($Utilisateur[1]);
 	$this->setMdp($Utilisateur[2]);
 	$this->setNom($Utilisateur[3]);
@@ -35,17 +33,15 @@ class CAdministrateur extends CUtilisateur
 
     public static function getInstance()
     {
-        
-        if (!isSet(self::$instance))
-        {
-            $classe = __CLASS__;
-            self::$instance = new $classe();
-            //echo "<br />La classe est instanciee";
-        }
-        else
-            echo "<br />La classe est deja instanciee";
-        return self::$instance;
-
+	if (!isSet(self::$instance))
+	{
+	    $classe = __CLASS__;
+	    self::$instance = new $classe();
+	    echo "<br />La classe est instanciee";
+	}
+	else
+	    echo "<br />La classe est deja instanciee";
+	return self::$instance;
     }
 
     public function __clone()
