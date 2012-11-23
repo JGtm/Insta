@@ -34,7 +34,7 @@ class CControleurMain
 		{
 		    echo $this->controleurSpe->genererFormulaire($array);
 		}
-		
+
 		break;
 
 
@@ -53,17 +53,34 @@ class CControleurMain
 
 		$this->controleurSpe = new CControleurFormulaire();
 		$this->controleurSpe->verificationAuth($Utilisateur);
-		
+
 		break;
 
 
 	    case 'listePizza':
 		// Test
-		$base = 'creme fraiche';
-		$listePizza = new CPizza($base);
-		$lp= $listePizza->listePizza();
-		echo $lp;
-		
+		$base = 'tomate';
+		$CPizza = new CPizza($base);
+		$listePizza = $CPizza->listePizza();
+
+		$liste = '<ul>';
+
+		foreach ($listePizza as $pizza)
+		{ // chaque ligne du tableau correspondra à un editeur
+		    $liste .= '<li>';
+
+		    foreach ($pizza as $value)
+		    { // chaque musique à plusieur valeurs, son titre, son artiste etc., chacun sera attribué à value
+			$liste .= $value . ' ';
+		    }
+
+		    $liste .= '</li>';
+		}
+
+		$liste .= '</ul>';
+
+		echo $liste;
+
 		break;
 	}
     }

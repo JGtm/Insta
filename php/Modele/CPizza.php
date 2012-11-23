@@ -2,7 +2,7 @@
 
 require_once('CPizza.php');
 require_once('CProduit.php');
-require_once ('CBdd.php');
+require_once('CBdd.php');
 
 class CPizza extends CProduit
 {
@@ -19,11 +19,8 @@ class CPizza extends CProduit
     public function listePizza()
     {
 	$bdd = new CBdd();
-	$connexion = $bdd->seConnecter();
 	
-	$listePizza = $bdd->selectionner($connexion, 'Pizzas p INNER JOIN Bases b ON p.base_id = b.base_id', '*', $this->base);
-	
-	$bdd->seDeconnecter($connexion);
+	$listePizza = $bdd->select('Pizzas p INNER JOIN Bases b ON p.id_base = b.id_base', 'p.libelle_pizza, b.libelle_base, p.ingredients', 'b.libelle_base LIKE "' . $this->base . '"');
 	
 	return $listePizza;
     }

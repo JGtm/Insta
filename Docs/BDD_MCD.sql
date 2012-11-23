@@ -78,3 +78,4 @@ ALTER TABLE Composer ADD CONSTRAINT FK_Composer_id_pizza FOREIGN KEY (id_pizza) 
 ALTER TABLE Composer ADD CONSTRAINT FK_Composer_id_ingredient FOREIGN KEY (id_ingredient) REFERENCES Ingredients (id_ingredient);
 ALTER TABLE Comprendre ADD CONSTRAINT FK_Comprendre_id_commande FOREIGN KEY (id_commande) REFERENCES Commandes (id_commande);
 ALTER TABLE Comprendre ADD CONSTRAINT FK_Comprendre_id_produit FOREIGN KEY (id_produit) REFERENCES Produits (id_produit);
+ALTER TABLE `Utilisateurs` ADD UNIQUE (`email`)

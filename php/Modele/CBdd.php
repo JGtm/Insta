@@ -94,7 +94,20 @@ class CBdd
 	    $query .= ' GROUP BY ' . $groupBy;
 	}
 	
+	try
+	{
+	    $resultat = $connexion->prepare($query);
+	    $resultat->execute();
+	    $resultat->setFetchMode(PDO::FETCH_ASSOC);
+	}
+	catch (PDOException $e)
+	{
+	    $resultat .= "Echec de l'execution : " . $e->getMessage();
+	}
+	
 	$this->seDeconnecter($connexion);
+	
+	return $resultat;
     }
 
     //---Fonction selection---
