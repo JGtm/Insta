@@ -14,7 +14,7 @@ abstract class CUtilisateur
 
     // --- OPERATIONS ---
     //---Constructeur---
-    protected function __construct($nom, $prenom, $email, $mdp, $qualite)
+   public   function __construct($nom='', $prenom='', $email='', $mdp='', $qualite='')
     {
 	$this->nom = $nom;
 	$this->prenom = $prenom;

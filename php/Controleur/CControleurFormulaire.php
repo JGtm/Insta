@@ -17,7 +17,10 @@ class CControleurFormulaire
 /////////////////////////////////////////////
 
 
-
+    public function validerFormulaire($array)
+    {
+    
+    }
     public function genererFormulaire($array,$lien)
     {
 	$formulaire = '';
@@ -57,6 +60,7 @@ class CControleurFormulaire
 	$formulaire.='</tbody>';
 	$formulaire.='</table>';
 	$formulaire.='</form>';
+        //$formulaire.='<label id="msg"><?php echo'. $lsMessage.'</label>';
 
 	return $formulaire;
     }

@@ -3,6 +3,7 @@
 require_once 'php/Modele/CBdd.php';
 require_once 'php/Modele/CPizza.php';
 require_once 'php/Vue/CHtml.php';
+require_once 'php/Modele/CUtilisateur.php';
 
 function __autoload($classe)
 {
@@ -37,9 +38,9 @@ class CControleurMain
         {
             default:
                 $this->tabVue['nomdeLaPage'] = 'Bienvenue chez Insta-Pizza';
-                $this->tabVue['titreContenu'] = 'essayer nos pizza';
-                $this->tabVue['contenu'] = '';
-                $this->tabVue['lienImage'] = '';
+                $this->tabVue['titreContenu'] = 'Essayer nos pizza';
+                $this->tabVue['contenu'] = ' ';
+                $this->tabVue['lienImage'] = 'images/pizza.jpg';
                 $this->tabVue['welcome'] = 'Bienvenue';
                 $this->tabVue['titreH2'] = '';
                 $this->tabVue['tabLiens'] = array(
@@ -103,12 +104,45 @@ class CControleurMain
                 $this->controleurSpe = new CControleurFormulaire();
 
                 $contenu = $this->controleurSpe->genererFormulaire($array, $lien);
+                
+                $this->tabVue['nomdeLaPage'] = 'Inscription';
+                $this->tabVue['titreContenu'] = 'Inscrivez vous';
+                $this->tabVue['contenu'] = $contenu;
+                $this->tabVue['lienImage'] = '';
+                $this->tabVue['welcome'] = '';
+                $this->tabVue['titreH2'] = '';
+                $this->tabVue['tabLiens'] = array(
+                    'home' => '/Insta/index.php',
+                    'about' => '',
+                    'services' => '',
+                    'menu' => '?page=listePizza ',
+                    'lala' => '',
+                    's\'identifier' => '?page=authentification',
+                    'contact' => ' ');
 
 
                 break;
 
             //---Page de validation de l'insciption
             case 'validationInscription':
+                
+                $this->tabVue['nomdeLaPage'] = 'Utilisateur';
+                $this->tabVue['titreContenu'] = 'Vos Information';
+                $this->tabVue['contenu'] = $contenu;
+                $this->tabVue['lienImage'] = '';
+                $this->tabVue['welcome'] = '';
+                $this->tabVue['titreH2'] = '';
+                $this->tabVue['tabLiens'] = array(
+                    'home' => '/Insta/index.php',
+                    'about' => '',
+                    'services' => '',
+                    'menu' => '?page=listePizza ',
+                    'lala' => '',
+                    's\'identifier' => '?page=authentification',
+                    'contact' => ' ');
+                
+                $user= new CClient($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp'],$_POST['adresse'],$_POST['code_postale'],$_POST['telephone'],$_POST['ville']);
+                $user->InsertClient();
 
 
 

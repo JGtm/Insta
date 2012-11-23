@@ -2,23 +2,6 @@
 
 class CHtml
 {
-
-//    private $tab = array (
-//        'nomdeLaPage' => '',
-//        'tabLiens'=> array (
-//            'home' => '/Insta/index.php',
-//	    'about' => '',
-//	    'services' => '',
-//	    'menu' => '?page=listePizza ',
-//	    'lala' => '',
-//	    's\'identifier' => '?page=authentification',
-//	    'contact' => ' '),
-//        'titreContenu'=>'',
-//        'contenu'=>'',
-//        'lienImage'=>'',
-//        'titreH2'=>'',
-//        'welcome'=>''
-//        );
     private $tab;
 
 
@@ -129,7 +112,7 @@ class CHtml
 	$corps .= '</p>';
 	$corps .= '<div class="clear"></div>';
 	// Lien "Lire la suite" à gerer je ne sais pas comment
-	$corps .= '<div align="right"><a href="" class="more">Lire la suite</a></div>';
+	//$corps .= '<div align="right"><a href="" class="more">Lire la suite</a></div>';
 	$corps .= '</div>';
 	$corps .= '</div>';
 
