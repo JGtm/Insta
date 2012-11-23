@@ -17,10 +17,7 @@ class CControleurFormulaire
 /////////////////////////////////////////////
 
 
-    public function validerFormulaire($array)
-    {
-    
-    }
+
     public function genererFormulaire($array,$lien)
     {
 	$formulaire = '';
@@ -67,6 +64,7 @@ class CControleurFormulaire
 
     public function verificationAuth($Utilisateur)
     {
+        echo $Utilisateur;
 	$tab = explode('/', $Utilisateur);
 	if (!empty($_SESSION['mdp']) AND $_SESSION['mdp'] == $tab[2])
 	{
@@ -77,20 +75,24 @@ class CControleurFormulaire
                 //---Dans le cas ou l'utilisateur est un ADMIN 
                 case 'SBO':
                     $admin = CAdministrateur::getInstance();
+                    echo "sbo";
                     break;
 
 		//---Dans le cas ou l'utilisateur est un EMPLOYER        
 		case 'BO':
-		    echo "bo";
+		    $employe = new CEmploye();
+                    echo 'bo';
                     break;
 		//---Dans le cas ou l'utilisateur est un CLIENT
 		case 'FO':
-		    echo "fo";
+		    $client=new CClient();
+                    echo "fo";
                     break;
 
 		//---Autre cas
 		default:
-		    echo "erreur";
+                    echo "erreur";
+		    
                     break;
 	    }
 	}
