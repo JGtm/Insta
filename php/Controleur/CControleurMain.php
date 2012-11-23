@@ -29,10 +29,11 @@ class CControleurMain
                     'e-Mail :' => "email",
                     'Mot de Passe :' => "mdp",
                 );
-                if (!empty($_SESSION['qualite']))
+                if (empty($_SESSION['qualite']))
                 {
                 echo $this->controleurSpe->genererFormulaire($array);
                 }
+                break;
 
 
             case 'validation':
@@ -50,6 +51,7 @@ class CControleurMain
                 
                 $this->controleurSpe = new CControleurFormulaire();
                 $this->controleurSpe->verificationAuth($Utilisateur);
+                break;
         }
     }
 

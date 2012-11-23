@@ -11,7 +11,7 @@ class CAdministrateur extends CUtilisateur
     private static $instance;
     private $bdd;
     // --- OPERATIONS ---
-   function __construct($nom='', $prenom='', $email='', $mdp='')
+   protected function __construct($nom='', $prenom='', $email='', $mdp='')
     {
         parent::__construct($nom='', $prenom='', $email='', $mdp='', 'SBO');
         $this->bdd=new CBdd();
@@ -36,7 +36,7 @@ class CAdministrateur extends CUtilisateur
         {
             $classe = __CLASS__;
             self::$instance = new $classe();
-            echo "<br />La classe est instanciee";
+            //echo "<br />La classe est instanciee";
         }
         else
             echo "<br />La classe est deja instanciee";

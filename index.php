@@ -17,7 +17,6 @@ if (isset($_POST['email']) AND $_POST['email'] != '' AND isset($_POST['mdp']) AN
 
 require_once 'php/Vue/CHtml.php';
 require_once 'php/Controleur/CControleurMain.php';
-require_once 'php/Modele/CAdministrateur.php';
 
 
 
@@ -41,4 +40,6 @@ $contenu = '<p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui 
 
 $html = new CHtml($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2, $welcome);
 echo $html->html();
+
+
 ?>		

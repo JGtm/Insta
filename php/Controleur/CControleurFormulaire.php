@@ -16,39 +16,6 @@ class CControleurFormulaire
 //fonctions//////////////////////////////////
 /////////////////////////////////////////////
 
-    public function validFormulaireAuth()
-    {
-        
-    }
-
-//    public function genererFormulaireAuth()
-//    {
-//
-//
-//        $formulaireAuth = '';
-//        $formulaireAuth.='<form method="POST" action="#">';
-//        $formulaireAuth.='<table border = "0">';
-//        $formulaireAuth.='<tbody>';
-//        $formulaireAuth.='<tr>';
-//        $formulaireAuth.='<td><label>email : </label></td>';
-//        $formulaireAuth.='<td><input type="text" name="email" value="" /></td>';
-//        $formulaireAuth.='</tr>';
-//        $formulaireAuth.='<tr>';
-//        $formulaireAuth.='<td><label>Mot de passe : </label></td>';
-//        $formulaireAuth.='<td><input type="password" name="mdp" value="" /></td>';
-//        $formulaireAuth.='</tr>';
-//        $formulaireAuth.='<tr>';
-//        $formulaireAuth.='<td><td align="right">';
-//        $formulaireAuth.='<input type="submit" name="valider" value="Valider"  />';
-//        $formulaireAuth.='</td>';
-//        $formulaireAuth.='</tr>';
-//        $formulaireAuth.='</tbody>';
-//        $formulaireAuth.='</table>';
-//        $formulaireAuth.='</form>';
-//
-//        return $formulaireAuth;
-//    }
-
     public function genererFormulaire($array)
     {
         $formulaire = '';
@@ -90,6 +57,7 @@ class CControleurFormulaire
                 //---Dans le cas ou l'utilisateur est un ADMIN 
                 case 'SBO':
                     $admin = CAdministrateur::getInstance();
+                    
 
                 //---Dans le cas ou l'utilisateur est un EMPLOYER        
                 case 'BO':
@@ -103,6 +71,12 @@ class CControleurFormulaire
                     echo "erreur";
             }
         }
+    }
+    public function pageAdmin($admin)
+    {
+        $nomDeLaPage='admin';
+        $tabLiens=
+        $pageAdmin =new CHtml($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2, $welcome);
     }
 }
 

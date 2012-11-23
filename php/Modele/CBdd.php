@@ -18,7 +18,7 @@ class CBdd
     //Constructeur///////////////////////////////
     /////////////////////////////////////////////
 
-    private function __construct()
+    public function __construct()
     {
         
     }
@@ -36,7 +36,7 @@ class CBdd
         try
         {
             //----on se connecte en utilisant les parametres
-            $lcn = new PDO(self::$instance->getPilote() . ":host=" . self::$instance->getServeur() . ";dbname=" . self::$instance->getBd() . ";port=" . self::$instance->getPort(), self::$instance->getUt(), self::$instance->getMdp());
+            $lcn = new PDO($this->getPilote() . ":host=" . $this->getServeur() . ";dbname=" . $this->getBd() . ";port=" . $this->getPort(), $this->getUt(), $this->getMdp());
             //---on modifie un des attribut par default pour gerer les erreur sur tt le script pas seulement sur la connection
             $lcn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $lcn->exec("SET NAMES 'UTF8'");
