@@ -1,22 +1,33 @@
 <?php
 
-require_once('class.ingredient.php');
+require_once('CPizza.php');
+require_once('CProduit.php');
+require_once ('CBdd.php');
 
-require_once('class.produit.php');
-
-class Modele_pizza extends Modele_produit
+class CPizza extends CProduit
 {
-
-    // --- ASSOCIATIONS ---
-    // generateAssociationEnd : 
-    // --- ATTRIBUTES ---
-
 
     public $base = '';
     public $taille = '';
 
-    // --- OPERATIONS ---
+    function __construct($base, $taille = '')
+    {
+	$this->base = $base;
+	$this->taille = $taille;
+    }
+
+    public function listePizza()
+    {
+	$bdd = new CBdd();
+	$connexion = $bdd->seConnecter();
+	
+	$listePizza = $bdd->selectionner($connexion, 'Pizzas p INNER JOIN Bases b ON p.base_id = b.base_id', '*', $this->base);
+	
+	$bdd->seDeconnecter($connexion);
+	
+	return $listePizza;
+    }
+
 }
 
-/* end of class Modele_Modele_pizza */
 ?>

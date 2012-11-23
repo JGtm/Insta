@@ -219,7 +219,6 @@ class CHtml
 
 	return $footer;
     }
-    
 
 }
 

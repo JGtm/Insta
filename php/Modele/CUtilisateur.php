@@ -16,65 +16,63 @@ abstract class CUtilisateur
     //---Constructeur---
     protected function __construct($nom, $prenom, $email, $mdp, $qualite)
     {
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->email = $email;
-        $this->mdp = $mdp;
-        $this->qualite = $qualite;
+	$this->nom = $nom;
+	$this->prenom = $prenom;
+	$this->email = $email;
+	$this->mdp = $mdp;
+	$this->qualite = $qualite;
     }
-    
+
     //---Getter Setter---
     public function getNom()
     {
-        return $this->nom;
+	return $this->nom;
     }
 
     public function setNom($nom)
     {
-        $this->nom = $nom;
+	$this->nom = $nom;
     }
 
     public function getPrenom()
     {
-        return $this->prenom;
+	return $this->prenom;
     }
 
     public function setPrenom($prenom)
     {
-        $this->prenom = $prenom;
+	$this->prenom = $prenom;
     }
 
     public function getEmail()
     {
-        return $this->email;
+	return $this->email;
     }
 
     public function setEmail($email)
     {
-        $this->email = $email;
+	$this->email = $email;
     }
 
     public function getMdp()
     {
-        return $this->mdp;
+	return $this->mdp;
     }
 
     public function setMdp($mdp)
     {
-        $this->mdp = $mdp;
+	$this->mdp = $mdp;
     }
 
     public function getQualite()
     {
-        return $this->qualite;
+	return $this->qualite;
     }
 
     public function setQualite($qualite)
     {
-        $this->qualite = $qualite;
+	$this->qualite = $qualite;
     }
-
-
 
 }
 

@@ -30,7 +30,7 @@ $lienImage = 'images/pizza.jpg'; // Facultatif
 $tabLiens =     $liens = array ('home' => '/Insta/index.php',
 	    'about' => ' ',
 	    'services' => ' ',
-	    'menu' => ' ',
+	    'menu' => '?page=listePizza ',
 	    'lala' => ' ',
 	    's\'identifier' => '?page=authentification',
 	    'contact' => ' ');

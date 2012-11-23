@@ -1,9 +1,6 @@
 <?php
 
-
 require_once('CCommande.php');
-
-
 require_once('CProduit.php');
 
 class CCompose

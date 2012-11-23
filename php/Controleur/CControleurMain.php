@@ -1,11 +1,12 @@
 <?php
 
 require_once 'php/Modele/CBdd.php';
+require_once 'php/Modele/CPizza.php';
 require_once 'php/Vue/CHtml.php';
 
 function __autoload($classe)
 {
-    require_once $classe.".php";
+    require_once $classe . ".php";
 }
 
 class CControleurMain
@@ -16,12 +17,12 @@ class CControleurMain
 
     function __construct($page)
     {
-        $this->bdd =new CBdd();
+	$this->bdd = new CBdd();
 
-        switch ($page)
-        {
-            case 'authentification':
-                $this->controleurSpe = new CControleurFormulaire();
+	switch ($page)
+	{
+	    case 'authentification':
+		$this->controleurSpe = new CControleurFormulaire();
 
 
                 $array = array
@@ -36,33 +37,46 @@ class CControleurMain
                 break;
 
 
-            case 'validation':
 
-                $tab=array
-                    (
-                    'mdp' => $_SESSION['mdp'],
-                    'email'=> $_SESSION['email']
-                    );
-                
-                $acn = $this->bdd->seConnecter();
-                $Utilisateur = $this->bdd->selectionner($acn, 'Utilisateurs', '*', $tab);
-                //echo $Utilisateur;
-              
-                
-                $this->controleurSpe = new CControleurFormulaire();
-                $this->controleurSpe->verificationAuth($Utilisateur);
-                break;
-        }
+	    case 'validation':
+
+
+		$tab = array
+		    (
+		    'mdp' => $_SESSION['mdp'],
+		    'email' => $_SESSION['email']
+		);
+
+		$acn = $this->bdd->seConnecter();
+		$Utilisateur = $this->bdd->selectionner($acn, 'Utilisateurs', '*', $tab);
+		//echo $Utilisateur;
+
+
+		$this->controleurSpe = new CControleurFormulaire();
+		$this->controleurSpe->verificationAuth($Utilisateur);
+		
+		break;
+
+
+	    case 'listePizza':
+		// Test
+		$base = 'creme fraiche';
+		$listePizza = new CPizza($base);
+		$lp= $listePizza->listePizza();
+		echo $lp;
+		
+		break;
+	}
     }
 
     public function getControleurSpe()
     {
-        return $this->controleurSpe;
+	return $this->controleurSpe;
     }
 
     public function setControleurSpe($controleurSpe)
     {
-        $this->controleurSpe = $controleurSpe;
+	$this->controleurSpe = $controleurSpe;
     }
 
 }
