@@ -17,11 +17,6 @@ class CControleurFormulaire
 /////////////////////////////////////////////
 
 
-    public function validFormulaireAuth()
-    {
-	
-    }
-
 
     public function genererFormulaire($array,$lien)
     {

@@ -23,13 +23,6 @@ $titreH2 = 'hello guest!';  // Facultatif
 $welcome = 'Welcome to our pizza parlour with its friendly hospitality! Try our famous fresh made Italian pizzas with only the freshest ingredients.'; // Facultatif
 $titreContenu = 'The Best From Our Chef';
 $lienImage = 'images/pizza.jpg'; // Facultatif
-$tabLiens =     $liens = array ('home' => '/Insta/index.php',
-	    'about' => ' ',
-	    'services' => ' ',
-	    'menu' => '?page=listePizza ',
-	    'lala' => ' ',
-	    's\'identifier' => '?page=authentification',
-	    'contact' => ' ');
 $contenu = '<p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et quasmo- lestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui...</p>
 <p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et quasmo- lestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui...</p>
 <p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui blanditiis praesentvouptatum deleniti atque corrupti quos dolores et quasmo- lestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui...</p>';
@@ -39,12 +32,11 @@ $contenu = '<p>At vero eos et accusamus et iusto odio dignis- simos ducimus qui 
 
 $page=$_GET['page'];
 $controleurSpe = new CControleurMain($page);
-$result=$controleurSpe->lesPages($page);
+$controleurSpe->lesPages($page);
 
+$tabResult=$controleurSpe->getTabVue();
 
-$contenu = $result;
-
-$html = new CHtml($nomDeLaPage, $tabLiens, $titreContenu, $contenu, $lienImage, $titreH2, $welcome);
+$html = new CHtml($tabResult);
 echo $html->html();
 
 
